@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<template id="__bundler_thumbnail" data-bg-color="#0A1628">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#0A1628"/>
+    <circle cx="600" cy="400" r="180" fill="none" stroke="#41FF28" stroke-width="10"/>
+    <path d="M600 260 L600 540 M480 400 L720 400" stroke="#006EE6" stroke-width="10" stroke-linecap="round"/>
+  </svg>
+</template>
+</head>
+<body>
+<x-dc>
+<![CDATA[
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: 'Exo', 'Segoe UI', sans-serif; background: #FFFFFF; }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: #006EE6; }
+    @keyframes floatY { 0%,100% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-16px) rotate(3deg); } }
+    @keyframes glowBreathe { 0%,100% { filter: drop-shadow(0 8px 16px rgba(0,110,230,0.18)); } 50% { filter: drop-shadow(0 16px 32px rgba(65,255,40,0.3)); } }
+    @keyframes dashMove { to { stroke-dashoffset: -200; } }
+    @keyframes pulseGlow { 0%,100% { opacity: 0.35; transform: scale(1); } 50% { opacity: 0.7; transform: scale(1.06); } }
+    @keyframes barShift { 0% { background-position: 0% 0; } 100% { background-position: 200% 0; } }
+    @keyframes barShiftY { 0% { background-position: 0 0%; } 100% { background-position: 0 200%; } }
+    @keyframes floatYsm { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-6px); } }
+  </style>
+</helmet>
+
+<div style="background:#FFFFFF;color:#0A1628;min-height:100vh;overflow-x:hidden;">
+
+  <svg width="0" height="0" style="position:absolute;">
+    <defs>
+      <linearGradient id="brainLineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#006EE6" />
+        <stop offset="100%" stop-color="#41FF28" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- ============ HEADER ============ -->
+  <header style="position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.06);">
+    <div class="r-header-inner" style="max-width:1240px;margin:0 auto;padding:16px 25px;display:flex;justify-content:space-between;align-items:center;">
+      <a href="index.html"><img src="assets/brain-logo-fullcolor.png" alt="Brain" style="height:32px;width:auto;" /></a>
+      <nav class="r-nav" style="display:flex;align-items:center;gap:4px;">
+        <a href="index.html" style="padding:10px 18px;border-radius:100px;font-size:14px;font-weight:500;color:#3A4A6B;">Home</a>
+        <a href="solucoes.html" style="padding:10px 18px;border-radius:100px;font-size:14px;font-weight:500;color:#3A4A6B;">Soluções</a>
+        <a href="blog.html" style="padding:10px 18px;border-radius:100px;font-size:14px;font-weight:500;color:#3A4A6B;">Blog</a>
+        <a href="carreiras.html" style="padding:10px 18px;border-radius:100px;font-size:14px;font-weight:500;color:#0A1628;background:#F5F7FA;">Carreiras</a>
+        <a href="#contato" style="margin-left:8px;padding:11px 24px;border-radius:100px;font-size:14px;font-weight:600;color:#FFFFFF;background:linear-gradient(135deg,#006EE6 0%,#41FF28 100%);background-size:160% 100%;background-position:0% 0%;transition:background-position 0.4s ease;" style-hover="background-position:100% 0%;">Fale Conosco</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section style="position:relative;padding:100px 25px 80px;overflow:hidden;background:radial-gradient(circle at 15% 20%, rgba(0,110,230,0.06) 0%, transparent 45%), radial-gradient(circle at 85% 80%, rgba(65,255,40,0.05) 0%, transparent 45%);">
+
+    <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
+      <div class="r-hero2" style="display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center;">
+        <div>
+          <span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:7px 16px;background:#006EE6;border-radius:6px;margin-bottom:24px;">#VemSerBrainer</span>
+          <h1 style="font-size:clamp(2.4rem,4.6vw,3.8rem);font-weight:800;line-height:1.12;letter-spacing:-0.02em;margin:0 0 20px;color:#0A1628;">Construa o <span style="display:inline-block;background:#41FF28;color:#0A1628;padding:2px 10px;border-radius:4px;">futuro</span></h1>
+          <p style="font-size:1.1rem;line-height:1.8;color:#3A4A6B;max-width:520px;margin:0 0 36px;">
+            Somos Brainers. Mentes conectadas, inquietas. Problemas reais nos movem. No Brain, a curiosidade é valorizada, a colaboração interdisciplinar é a regra e a inovação acontece todos os dias.
+          </p>
+          <div style="display:flex;gap:16px;flex-wrap:wrap;">
+            <a href="https://inovacaobrain.com.br/carreiras/" target="_blank" rel="noopener" style="display:inline-block;padding:15px 32px;border-radius:8px;font-weight:700;font-size:14px;background:linear-gradient(135deg,#006EE6 0%,#41FF28 100%);background-size:160% 100%;background-position:0% 0%;color:#FFFFFF;transition:background-position 0.4s ease, transform 0.2s ease;" style-hover="background-position:100% 0%;transform:translateY(-2px);">Veja nossas vagas</a>
+            <a href="#beneficios" style="display:inline-block;padding:15px 32px;border-radius:8px;font-weight:700;font-size:14px;border:2px solid rgba(0,0,0,0.12);color:#0A1628;transition:border-color 0.25s ease, transform 0.2s ease, color 0.25s ease;" style-hover="border-color:#006EE6;color:#006EE6;transform:translateY(-2px);">Conheça nossos benefícios</a>
+          </div>
+        </div>
+        <div style="position:relative;border-radius:12px;overflow:hidden;">
+          <img src="uploads/comp_photo_1222.jpg" alt="Equipe Brain apresentando roadmap de projeto na sala de reuniões" style="width:100%;height:440px;object-fit:cover;object-position:75% 60%;display:block;position:relative;z-index:1;" />
+          <div style="position:absolute;top:16px;left:16px;display:inline-flex;align-items:center;gap:6px;background:#0A1628;color:#FFFFFF;font-size:11px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;padding:6px 12px;border-radius:5px;z-index:3;">#VemSerBrainer</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div style="position:relative;height:1px;z-index:5;">
+    <div style="position:absolute;left:0;right:0;top:-20px;height:40px;display:flex;align-items:center;">
+      <div style="width:100%;height:1.5px;background:linear-gradient(90deg,rgba(0,110,230,0.35),rgba(65,255,40,0.5),rgba(0,110,230,0.35));"></div>
+    </div>
+  </div>
+
+  <!-- ============ CULTURA ============ -->
+  <section style="position:relative;padding:90px 25px;overflow:hidden;">
+    <img src="uploads/comp_photo_9658.jpg" alt="" style="position:absolute;top:-20px;left:-20px;width:calc(100% + 40px);height:calc(100% + 40px);object-fit:cover;filter:blur(20px) saturate(115%);transform:scale(1.02);z-index:0;">
+    <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(3,22,50,0.87) 0%,rgba(3,48,30,0.83) 100%);z-index:1;"></div>
+    <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
+      <div style="text-align:center;max-width:680px;margin:0 auto 56px;">
+        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 16px;">Por que o Brain</p>
+        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 12px;color:#FFFFFF;">Cultura que transforma</h2>
+        <p style="font-size:1.05rem;color:rgba(255,255,255,0.82);margin:0;">Profissionais movidos por curiosidade, adaptabilidade e colaboração</p>
+      </div>
+      <div class="r-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:25px;">
+        <sc-for list="{{ culture }}" as="c" hint-placeholder-count="3">
+          <div style="position:relative;text-align:center;padding:40px 26px;{{ glassCard }}transition:transform 0.35s ease, box-shadow 0.35s ease;" style-hover="{{ glassCardHover }}" style-before="{{ glassHighlight }}">
+            <div style="width:130px;height:130px;margin:0 auto 20px;">
+              <img src="{{ c.icon }}" alt="" style="width:100%;height:100%;object-fit:contain;animation:floatY {{ c.duration }}s ease-in-out infinite, glowBreathe 4s ease-in-out infinite;" />
+            </div>
+            <h4 style="font-size:1.1rem;font-weight:600;margin:0 0 10px;color:#FFFFFF;">{{ c.title }}</h4>
+            <p style="font-size:0.92rem;color:rgba(255,255,255,0.82);line-height:1.65;margin:0;">{{ c.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <div style="position:relative;height:1px;z-index:5;">
+    <div style="position:absolute;left:0;right:0;top:-20px;height:40px;display:flex;align-items:center;">
+      <div style="width:100%;height:1.5px;background:linear-gradient(90deg,rgba(65,255,40,0.35),rgba(255,195,0,0.5),rgba(65,255,40,0.35));"></div>
+    </div>
+  </div>
+
+  <!-- ============ BENEFÍCIOS ============ -->
+  <section id="beneficios" style="position:relative;padding:90px 25px;background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);overflow:hidden;">
+    <div style="position:absolute;top:20px;right:-60px;width:280px;height:280px;border-radius:50%;background:#FFC300;opacity:0.12;filter:blur(70px);"></div>
+    <div style="position:absolute;bottom:-40px;left:-60px;width:260px;height:260px;border-radius:50%;background:#006EE6;opacity:0.1;filter:blur(70px);"></div>
+    <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
+      <div style="text-align:center;max-width:680px;margin:0 auto 56px;">
+        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 16px;">Benefícios</p>
+        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 12px;color:#0A1628;">Cuidamos de quem inova</h2>
+        <p style="font-size:1.05rem;color:#3A4A6B;margin:0;">Pacote completo para que você foque no que realmente importa</p>
+      </div>
+      <div class="r-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+        <sc-for list="{{ benefits }}" as="b" hint-placeholder-count="9">
+          <div style="position:relative;display:flex;align-items:center;gap:16px;padding:20px;{{ glassRow }}transition:transform 0.3s ease, box-shadow 0.3s ease;" style-hover="{{ glassRowHover }}" style-before="{{ glassHighlight }}">
+            <div style="width:56px;height:56px;flex-shrink:0;display:flex;align-items:center;justify-content:center;{{ glassIconBox }}border-radius:12px;">
+              <img src="{{ b.icon }}" alt="" style="width:40px;height:40px;object-fit:contain;animation:floatYsm {{ b.duration }}s ease-in-out infinite;" />
+            </div>
+            <div>
+              <h4 style="font-size:0.95rem;color:#0A1628;margin:0 0 4px;">{{ b.title }}</h4>
+              <p style="font-size:0.82rem;color:#3A4A6B;line-height:1.5;margin:0;">{{ b.desc }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <div style="position:relative;height:1px;z-index:5;">
+    <div style="position:absolute;left:0;right:0;top:-20px;height:40px;display:flex;align-items:center;">
+      <div style="width:100%;height:1.5px;background:linear-gradient(90deg,rgba(0,110,230,0.35),rgba(65,255,40,0.5),rgba(0,110,230,0.35));"></div>
+    </div>
+  </div>
+
+  <!-- ============ ESCRITÓRIOS ============ -->
+  <section style="padding:90px 25px;background:#FFFFFF;">
+    <div style="max-width:1240px;margin:0 auto;">
+      <div style="text-align:center;max-width:680px;margin:0 auto 56px;">
+        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:6px 14px;background:#006EE6;border-radius:6px;margin:0 0 16px;">Presença</p>
+        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 12px;color:#0A1628;">Onde estamos</h2>
+        <p style="font-size:1.05rem;color:#3A4A6B;margin:0;">Três escritórios pelo Brasil, operando em Anywhere Office</p>
+      </div>
+      <div class="r-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+        <sc-for list="{{ offices }}" as="o" hint-placeholder-count="3">
+          <div style="position:relative;padding:36px 26px;{{ glassCard }}transition:transform 0.3s ease, box-shadow 0.3s ease;" style-hover="{{ glassCardHover }}" style-before="{{ glassHighlight }}">
+            <div style="font-size:0.85rem;font-weight:700;color:#006EE6;margin-bottom:14px;">{{ o.number }}</div>
+            <h4 style="font-size:1.2rem;margin:0 0 6px;color:#0A1628;">{{ o.city }}</h4>
+            <p style="font-size:0.85rem;font-weight:600;color:#006EE6;text-transform:uppercase;letter-spacing:0.05em;margin:0 0 12px;">{{ o.state }}</p>
+            <p style="font-size:0.9rem;color:#3A4A6B;line-height:1.6;margin:0;">{{ o.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <div style="position:relative;height:1px;z-index:5;">
+    <div style="position:absolute;left:0;right:0;top:-20px;height:40px;display:flex;align-items:center;">
+      <div style="width:100%;height:1.5px;background:linear-gradient(90deg,rgba(65,255,40,0.35),rgba(255,195,0,0.5),rgba(65,255,40,0.35));"></div>
+    </div>
+  </div>
+
+  <!-- ============ TIMELINE ============ -->
+  <section style="position:relative;padding:90px 25px;overflow:hidden;">
+    <img src="uploads/comp_photo_9663.jpg" alt="" style="position:absolute;top:-20px;left:-20px;width:calc(100% + 40px);height:calc(100% + 40px);object-fit:cover;filter:blur(20px) saturate(115%);transform:scale(1.02);z-index:0;">
+    <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(3,22,50,0.87) 0%,rgba(3,48,30,0.83) 100%);z-index:1;"></div>
+    <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
+      <div style="text-align:center;max-width:680px;margin:0 auto 56px;">
+        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 16px;">Processo seletivo</p>
+        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 12px;color:#FFFFFF;">A jornada de seleção</h2>
+        <p style="font-size:1.05rem;color:rgba(255,255,255,0.82);margin:0;">Transparente, ágil e com feedback em cada etapa</p>
+      </div>
+      <div style="position:relative;max-width:1160px;margin:0 auto;background:rgba(255,255,255,0.14);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);border:1px solid rgba(255,255,255,0.3);border-radius:24px;padding:44px 32px 36px;">
+        <div style="position:absolute;top:96px;left:8%;right:8%;height:3px;background:linear-gradient(90deg,#006EE6,#41FF28,#FFC300,#006EE6,#41FF28);background-size:200% 100%;opacity:0.4;animation:barShift 6s linear infinite;"></div>
+        <div class="r-grid5" style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px;">
+          <sc-for list="{{ timeline }}" as="t" hint-placeholder-count="5">
+            <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;">
+              <div style="position:relative;width:104px;height:104px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
+                <div style="position:absolute;inset:0;border-radius:50%;background:linear-gradient(135deg,#006EE6,#41FF28);opacity:0.22;animation:pulseGlow 2.6s ease-in-out infinite {{ t.delay }}s;"></div>
+                <div style="position:relative;width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#006EE6,#41FF28);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px -8px rgba(0,10,20,0.4);animation:floatYsm 4.4s ease-in-out infinite {{ t.delay }}s;">
+                  <img src="{{ t.icon }}" alt="" style="width:52px;height:52px;object-fit:contain;filter:brightness(0) invert(1);" />
+                </div>
+                <div style="position:absolute;top:-6px;right:-4px;width:28px;height:28px;border-radius:50%;background:#FFFFFF;border:2px solid #006EE6;color:#006EE6;font-size:0.78rem;font-weight:800;display:flex;align-items:center;justify-content:center;">{{ t.step }}</div>
+              </div>
+              <h4 style="font-size:1rem;color:#FFFFFF;margin:8px 0 8px;">{{ t.title }}</h4>
+              <p style="font-size:0.84rem;color:rgba(255,255,255,0.82);line-height:1.55;margin:0;">{{ t.desc }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div style="position:relative;height:1px;z-index:5;">
+    <div style="position:absolute;left:0;right:0;top:-20px;height:40px;display:flex;align-items:center;">
+      <div style="width:100%;height:1.5px;background:linear-gradient(90deg,rgba(0,110,230,0.35),rgba(65,255,40,0.5),rgba(0,110,230,0.35));"></div>
+    </div>
+  </div>
+
+  <!-- ============ CTA FINAL ============ -->
+  <section style="position:relative;padding:90px 25px;background:linear-gradient(135deg,#E8F4FD 0%,#D4FFF0 100%);text-align:center;overflow:hidden;">
+    <h2 style="font-size:clamp(1.8rem,3.6vw,2.6rem);font-weight:700;margin:0 0 16px;color:#0A1628;position:relative;z-index:2;">Venha construir o futuro com a gente</h2>
+    <p style="font-size:1.05rem;color:#3A4A6B;margin:0 0 36px;position:relative;z-index:2;">Confira as vagas abertas e dê o próximo passo na sua carreira.</p>
+    <a href="https://inovacaobrain.com.br/carreiras/" target="_blank" rel="noopener" style="display:inline-block;padding:16px 36px;border-radius:8px;font-weight:700;font-size:14px;background:linear-gradient(135deg,#006EE6 0%,#41FF28 100%);background-size:160% 100%;background-position:0% 0%;color:#FFFFFF;position:relative;z-index:2;transition:background-position 0.4s ease, transform 0.2s ease;" style-hover="background-position:100% 0%;transform:translateY(-2px);">Veja nossas vagas</a>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="position:relative;padding:64px 25px 32px;background:#FFFFFF;border-top:1px solid rgba(0,0,0,0.06);overflow:hidden;">
+    <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
+      <div class="r-footer" style="display:grid;grid-template-columns:1.3fr 1fr 1fr auto;gap:40px;margin-bottom:44px;align-items:start;">
+        <div>
+          <img src="assets/brain-logo-fullcolor.png" alt="Brain" style="height:32px;width:auto;margin-bottom:16px;" />
+          <p style="font-size:0.85rem;color:#6B7A9A;line-height:1.7;margin:0;max-width:260px;">Instituto de Ciência e Tecnologia. Inovando com propósito desde a fundação pela Algar Telecom.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:11px;">
+          <a href="https://inovacaobrain.com.br/intraempreendedorismo/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#006EE6;">Intraempreendedorismo</a>
+          <a href="https://inovacaobrain.com.br/inovacao-para-crescimento/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#006EE6;">Inovação para crescimento</a>
+          <a href="https://inovacaobrain.com.br/open-innovation/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#006EE6;">Open Innovation</a>
+          <a href="https://inovacaobrain.com.br/pd/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#0A1628;margin-top:8px;">P&amp;D</a>
+          <a href="https://inovacaobrain.com.br/politica-de-cookies/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#0A1628;">Política de Cookies</a>
+          <a href="https://inovacaobrain.com.br/politica-de-privacidade/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#0A1628;">Política de Privacidade</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:11px;">
+          <a href="https://inovacaobrain.com.br/brain/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#0A1628;">Brain</a>
+          <a href="https://inovacaobrain.com.br/consulting/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#0A1628;">Consulting</a>
+          <a href="https://inovacaobrain.com.br/training/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#0A1628;">Training</a>
+          <a href="https://inovacaobrain.com.br/pd/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#0A1628;">Lab</a>
+          <a href="carreiras.html" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#006EE6;text-decoration:underline;">Carreiras</a>
+          <a href="blog.html" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#0A1628;">Blog</a>
+        </div>
+        <div style="display:flex;gap:10px;">
+          <a href="https://www.linkedin.com/company/inovacaobrain/" target="_blank" rel="noopener" aria-label="LinkedIn" style="width:34px;height:34px;border-radius:50%;background:#006EE6;color:#FFFFFF;display:flex;align-items:center;justify-content:center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.94 6 2.5 6S0 4.88 0 3.5 1.04 1 2.48 1s2.5 1.12 2.5 2.5zM.24 8.25h4.48V23H.24V8.25zM8.25 8.25h4.29v2.01h.06c.6-1.13 2.07-2.32 4.26-2.32 4.55 0 5.39 3 5.39 6.9V23h-4.48v-6.98c0-1.67-.03-3.81-2.32-3.81-2.33 0-2.68 1.82-2.68 3.69V23H8.25V8.25z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/Brain-Centro-de-Inova%C3%A7%C3%A3o-em-Neg%C3%B3cios-Digitais-364749457277167/" target="_blank" rel="noopener" aria-label="Facebook" style="width:34px;height:34px;border-radius:50%;background:#006EE6;color:#FFFFFF;display:flex;align-items:center;justify-content:center;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/braininovacao/" target="_blank" rel="noopener" aria-label="Instagram" style="width:34px;height:34px;border-radius:50%;background:#006EE6;color:#FFFFFF;display:flex;align-items:center;justify-content:center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.youtube.com/channel/UCw-3LYhyc9vBaqmUTOf3bBA" target="_blank" rel="noopener" aria-label="YouTube" style="width:34px;height:34px;border-radius:50%;background:#006EE6;color:#FFFFFF;display:flex;align-items:center;justify-content:center;">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2s-.23-1.64-.94-2.36c-.9-.94-1.9-.95-2.36-1C16.9 2.5 12 2.5 12 2.5h-.01s-4.89 0-8.19.34c-.46.05-1.46.06-2.36 1C.73 4.56.5 6.2.5 6.2S.25 8.13.25 10.06v1.82c0 1.93.25 3.86.25 3.86s.23 1.64.94 2.36c.9.94 2.08.91 2.6 1.01 1.9.18 8 .24 8 .24s4.9-.01 8.2-.35c.46-.05 1.46-.06 2.36-1 .71-.72.94-2.36.94-2.36s.25-1.93.25-3.86v-1.82c0-1.93-.25-3.86-.25-3.86zM9.75 14.98V8.72l6 3.14-6 3.12z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@brain.innovation" target="_blank" rel="noopener" aria-label="TikTok" style="width:34px;height:34px;border-radius:50%;background:#006EE6;color:#FFFFFF;display:flex;align-items:center;justify-content:center;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82c-.9-.99-1.36-2.25-1.36-3.61h-3.44v13.9c0 1.68-1.36 3.04-3.04 3.04-1.68 0-3.04-1.36-3.04-3.04 0-1.68 1.36-3.04 3.04-3.04.32 0 .62.05.91.14V9.7a6.5 6.5 0 0 0-.91-.06A6.53 6.53 0 0 0 2.23 16.2 6.53 6.53 0 0 0 8.76 22.7a6.53 6.53 0 0 0 6.53-6.5V9.02a8.3 8.3 0 0 0 4.85 1.55V7.11a4.85 4.85 0 0 1-3.54-1.29z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div style="padding-top:24px;border-top:1px solid rgba(0,0,0,0.06);text-align:center;">
+        <p style="font-size:0.82rem;color:#6B7A9A;margin:0;">&copy; 2026 Brain Inovação. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+]]>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;glassIntensity&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;subtle&quot;,&quot;options&quot;:[&quot;subtle&quot;,&quot;pronounced&quot;],&quot;tsType&quot;:&quot;'subtle' | 'pronounced'&quot;,&quot;section&quot;:&quot;Efeito glass dos cards&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const glassIntensity = this.props.glassIntensity ?? 'pronounced';
+    const strong = glassIntensity === 'pronounced';
+
+    const glassCard = strong
+      ? 'background:linear-gradient(135deg,rgba(0,110,230,0.14) 0%,rgba(65,255,40,0.1) 100%);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border:1px solid rgba(255,255,255,0.7);border-radius:18px;box-shadow:0 20px 44px -16px rgba(0,60,110,0.18), inset 0 1px 0 rgba(255,255,255,0.7);'
+      : 'background:rgba(255,255,255,0.5);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.6);border-radius:18px;';
+    const glassCardHover = strong
+      ? 'transform:translateY(-8px);box-shadow:0 28px 54px -16px rgba(0,60,110,0.24), inset 0 1px 0 rgba(255,255,255,0.8);'
+      : 'transform:translateY(-6px);';
+    const glassRow = strong
+      ? 'background:linear-gradient(135deg,rgba(0,110,230,0.12) 0%,rgba(65,255,40,0.08) 100%);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border:1px solid rgba(255,255,255,0.7);border-radius:14px;box-shadow:0 12px 28px -12px rgba(0,60,110,0.14);'
+      : 'background:rgba(255,255,255,0.5);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.6);border-radius:14px;';
+    const glassRowHover = strong
+      ? 'transform:translateY(-4px);box-shadow:0 16px 32px -12px rgba(0,60,110,0.2);'
+      : 'transform:translateY(-4px);';
+    const glassHighlight = strong
+      ? "content:'';position:absolute;top:0;left:0;right:0;height:50%;border-radius:18px 18px 40px 40px / 18px 18px 60px 60px;background:linear-gradient(180deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%);pointer-events:none;"
+      : "content:'';display:none;";
+    const glassIconBox = 'background:linear-gradient(135deg,rgba(0,110,230,0.16) 0%,rgba(65,255,40,0.12) 100%);backdrop-filter:blur(16px) saturate(180%);-webkit-backdrop-filter:blur(16px) saturate(180%);border:1px solid rgba(255,255,255,0.75);box-shadow:0 8px 18px -6px rgba(0,60,110,0.16), inset 0 1px 0 rgba(255,255,255,0.7);';
+
+    return {
+      glassCard, glassCardHover, glassRow, glassRowHover, glassHighlight, glassIconBox,
+      culture: [
+        { icon: 'assets/comp_icon-lightbulb-3d.png', title: 'Curiosidade', desc: 'Buscamos entender o "porquê" antes do "como". A curiosidade nos leva a soluções que ninguém imaginou.', duration: 5 },
+        { icon: 'assets/comp_icon-digital-3d.png', title: 'Adaptabilidade', desc: 'Mudamos de rota rápido. A tecnologia evolui todo dia e nós evoluímos junto.', duration: 5.4 },
+        { icon: 'assets/comp_icon-team-3d.png', title: 'Colaboração', desc: 'Squads multidisciplinares unem tecnologia, negócios e design para criar soluções.', duration: 4.8 },
+      ],
+      benefits: [
+        { icon: 'assets/comp_icon-health-3d.png', title: 'Plano de Saúde', desc: 'Cobertura completa para você e sua família', duration: 4.2 },
+        { icon: 'assets/comp_icon-cloud-3d.png', title: 'Assistência Odontológica', desc: 'Plano odontológico para cuidar do seu sorriso', duration: 4.6 },
+        { icon: 'assets/comp_icon-lightbulb-3d.png', title: 'Cartão Caju', desc: 'Multibenefícios com flexibilidade de uso', duration: 4.0 },
+        { icon: 'assets/comp_icon-rocket-3d.png', title: 'Remuneração Variável', desc: 'Bônus por desempenho e resultados', duration: 4.8 },
+        { icon: 'assets/comp_icon-5g-3d.png', title: 'Gympass', desc: 'Acesso a academias e bem-estar', duration: 4.4 },
+        { icon: 'assets/comp_icon-globe-3d.png', title: 'Psicologia Viva', desc: 'Apoio psicológico para equilíbrio emocional', duration: 5.0 },
+        { icon: 'assets/comp_icon-digital-3d.png', title: 'Auxílio Educação', desc: 'Valor para investimento em cursos e especializações', duration: 4.3 },
+        { icon: 'assets/comp_icon-training-3d.png', title: 'Capacitações', desc: 'Treinamentos internos e acesso a plataformas de aprendizado', duration: 4.7 },
+        { icon: 'assets/comp_icon-team-3d.png', title: 'Anywhere Office', desc: 'Trabalhe de onde quiser com flexibilidade total', duration: 4.5 },
+      ],
+      offices: [
+        { number: '01', city: 'Uberlândia', state: 'Minas Gerais', desc: 'Sede principal com Squads multidisciplinares' },
+        { number: '02', city: 'São Paulo', state: 'São Paulo', desc: 'Hub estratégico com conexão direta ao mercado' },
+        { number: '03', city: 'Recife', state: 'Pernambuco', desc: 'Centro de inovação no Nordeste' },
+      ],
+      timeline: [
+        { step: '1', title: 'Inscrição', desc: 'Envie seu currículo e nos conte sobre sua experiência e motivação', duration: '~5 min', icon: 'assets/comp_icon-digital-3d.png', delay: 0 },
+        { step: '2', title: 'Triagem', desc: 'Nosso time analisa seu perfil e entra em contato com os candidatos alinhados', duration: '~3 dias', icon: 'assets/comp_icon-consultancy-3d.png', delay: 0.4 },
+        { step: '3', title: 'Entrevista', desc: 'Bate-papo com o gestor e o squad para conhecer sua forma de pensar e colaborar', duration: '~1 semana', icon: 'assets/comp_icon-team-3d.png', delay: 0.8 },
+        { step: '4', title: 'Desafio', desc: 'Um desafio prático para entender como você resolve problemas reais', duration: '~1 semana', icon: 'assets/comp_icon-rd-3d.png', delay: 1.2 },
+        { step: '5', title: 'Oferta', desc: 'Feedback final, proposta de contratação e onboarding com todo o suporte', duration: '~2 dias', icon: 'assets/comp_icon-rocket-3d.png', delay: 1.6 },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
