@@ -97,7 +97,6 @@
           </p>
           <div style="display:flex;gap:16px;flex-wrap:wrap;">
             <a href="https://inovacaobrain.com.br/carreiras/" target="_blank" rel="noopener" style="display:inline-block;padding:15px 32px;border-radius:8px;font-weight:700;font-size:14px;background:linear-gradient(135deg,#006EE6 0%,#41FF28 100%);background-size:160% 100%;background-position:0% 0%;color:#FFFFFF;transition:background-position 0.4s ease, transform 0.2s ease;" style-hover="background-position:100% 0%;transform:translateY(-2px);">Veja nossas vagas</a>
-            <a href="#beneficios" style="display:inline-block;padding:15px 32px;border-radius:8px;font-weight:700;font-size:14px;border:2px solid rgba(0,0,0,0.12);color:#0A1628;transition:border-color 0.25s ease, transform 0.2s ease, color 0.25s ease;" style-hover="border-color:#006EE6;color:#006EE6;transform:translateY(-2px);">Conheça nossos benefícios</a>
           </div>
         </div>
         <div style="position:relative;border-radius:12px;overflow:hidden;">
@@ -114,96 +113,7 @@
     </div>
   </div>
 
-  <!-- ============ CULTURA ============ -->
-  <section style="position:relative;padding:64px 25px;overflow:hidden;">
-    <img src="uploads/comp_photo_9658.jpg" alt="" style="position:absolute;top:-20px;left:-20px;width:calc(100% + 40px);height:calc(100% + 40px);object-fit:cover;filter:blur(20px) saturate(115%);transform:scale(1.02);z-index:0;">
-    <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(3,22,50,0.87) 0%,rgba(3,48,30,0.83) 100%);z-index:1;"></div>
-    <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
-      <div style="text-align:center;max-width:680px;margin:0 auto 56px;">
-        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 16px;">Por que o Brain</p>
-        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 12px;color:#FFFFFF;">Cultura que transforma</h2>
-        <p style="font-size:1.05rem;color:rgba(255,255,255,0.82);margin:0;">Profissionais movidos por curiosidade, adaptabilidade e colaboração</p>
-      </div>
-      <div class="r-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:25px;">
-        <sc-for list="{{ culture }}" as="c" hint-placeholder-count="3">
-          <div style="position:relative;text-align:center;padding:40px 26px;{{ glassCard }}transition:transform 0.35s ease, box-shadow 0.35s ease;" style-hover="{{ glassCardHover }}" style-before="{{ glassHighlight }}">
-            <div style="width:130px;height:130px;margin:0 auto 20px;">
-              <img src="{{ c.icon }}" alt="" style="width:100%;height:100%;object-fit:contain;animation:floatY {{ c.duration }}s ease-in-out infinite, glowBreathe 4s ease-in-out infinite;" />
-            </div>
-            <h4 style="font-size:1.1rem;font-weight:600;margin:0 0 10px;color:#FFFFFF;">{{ c.title }}</h4>
-            <p style="font-size:0.92rem;color:rgba(255,255,255,0.82);line-height:1.65;margin:0;">{{ c.desc }}</p>
-          </div>
-        </sc-for>
-      </div>
-    </div>
-  </section>
-
-  <div style="position:relative;height:1px;z-index:5;">
-    <div style="position:absolute;left:0;right:0;top:-20px;height:40px;display:flex;align-items:center;">
-      <div style="width:100%;height:1.5px;background:linear-gradient(90deg,rgba(65,255,40,0.35),rgba(255,195,0,0.5),rgba(65,255,40,0.35));"></div>
-    </div>
-  </div>
-
-  <!-- ============ BENEFÍCIOS ============ -->
-  <section id="beneficios" style="position:relative;padding:64px 25px;background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);overflow:hidden;">
-    <div style="position:absolute;top:20px;right:-60px;width:280px;height:280px;border-radius:50%;background:#FFC300;opacity:0.12;filter:blur(70px);"></div>
-    <div style="position:absolute;bottom:-40px;left:-60px;width:260px;height:260px;border-radius:50%;background:#006EE6;opacity:0.1;filter:blur(70px);"></div>
-    <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
-      <div style="text-align:center;max-width:680px;margin:0 auto 56px;">
-        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 16px;">Benefícios</p>
-        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 12px;color:#0A1628;">Cuidamos de quem inova</h2>
-        <p style="font-size:1.05rem;color:#3A4A6B;margin:0;">Pacote completo para que você foque no que realmente importa</p>
-      </div>
-      <div class="r-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
-        <sc-for list="{{ benefits }}" as="b" hint-placeholder-count="9">
-          <div style="position:relative;display:flex;align-items:center;gap:16px;padding:20px;{{ glassRow }}transition:transform 0.3s ease, box-shadow 0.3s ease;" style-hover="{{ glassRowHover }}" style-before="{{ glassHighlight }}">
-            <div style="width:56px;height:56px;flex-shrink:0;display:flex;align-items:center;justify-content:center;{{ glassIconBox }}border-radius:12px;">
-              <img src="{{ b.icon }}" alt="" style="width:40px;height:40px;object-fit:contain;animation:floatYsm {{ b.duration }}s ease-in-out infinite;" />
-            </div>
-            <div>
-              <h4 style="font-size:0.95rem;color:#0A1628;margin:0 0 4px;">{{ b.title }}</h4>
-              <p style="font-size:0.82rem;color:#3A4A6B;line-height:1.5;margin:0;">{{ b.desc }}</p>
-            </div>
-          </div>
-        </sc-for>
-      </div>
-    </div>
-  </section>
-
-  <div style="position:relative;height:1px;z-index:5;">
-    <div style="position:absolute;left:0;right:0;top:-20px;height:40px;display:flex;align-items:center;">
-      <div style="width:100%;height:1.5px;background:linear-gradient(90deg,rgba(0,110,230,0.35),rgba(65,255,40,0.5),rgba(0,110,230,0.35));"></div>
-    </div>
-  </div>
-
-  <!-- ============ ESCRITÓRIOS ============ -->
-  <section style="padding:64px 25px;background:#FFFFFF;">
-    <div style="max-width:1240px;margin:0 auto;">
-      <div style="text-align:center;max-width:680px;margin:0 auto 56px;">
-        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:6px 14px;background:#006EE6;border-radius:6px;margin:0 0 16px;">Presença</p>
-        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 12px;color:#0A1628;">Onde estamos</h2>
-        <p style="font-size:1.05rem;color:#3A4A6B;margin:0;">Três escritórios pelo Brasil, operando em Anywhere Office</p>
-      </div>
-      <div class="r-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
-        <sc-for list="{{ offices }}" as="o" hint-placeholder-count="3">
-          <div style="position:relative;padding:36px 26px;{{ glassCard }}transition:transform 0.3s ease, box-shadow 0.3s ease;" style-hover="{{ glassCardHover }}" style-before="{{ glassHighlight }}">
-            <div style="font-size:0.85rem;font-weight:700;color:#006EE6;margin-bottom:14px;">{{ o.number }}</div>
-            <h4 style="font-size:1.2rem;margin:0 0 6px;color:#0A1628;">{{ o.city }}</h4>
-            <p style="font-size:0.85rem;font-weight:600;color:#006EE6;text-transform:uppercase;letter-spacing:0.05em;margin:0 0 12px;">{{ o.state }}</p>
-            <p style="font-size:0.9rem;color:#3A4A6B;line-height:1.6;margin:0;">{{ o.desc }}</p>
-          </div>
-        </sc-for>
-      </div>
-    </div>
-  </section>
-
-  <div style="position:relative;height:1px;z-index:5;">
-    <div style="position:absolute;left:0;right:0;top:-20px;height:40px;display:flex;align-items:center;">
-      <div style="width:100%;height:1.5px;background:linear-gradient(90deg,rgba(65,255,40,0.35),rgba(255,195,0,0.5),rgba(65,255,40,0.35));"></div>
-    </div>
-  </div>
-
-  <!-- ============ TIMELINE ============ -->
+  <!-- ============ TIMELINE: JORNADA DE SELEÇÃO ============ -->
   <section style="position:relative;padding:64px 25px;overflow:hidden;">
     <img src="uploads/comp_photo_9663.jpg" alt="" style="position:absolute;top:-20px;left:-20px;width:calc(100% + 40px);height:calc(100% + 40px);object-fit:cover;filter:blur(20px) saturate(115%);transform:scale(1.02);z-index:0;">
     <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(3,22,50,0.87) 0%,rgba(3,48,30,0.83) 100%);z-index:1;"></div>
@@ -241,7 +151,7 @@
   </div>
 
   <!-- ============ CTA FINAL ============ -->
-  <section style="position:relative;padding:64px 25px;background:linear-gradient(135deg,#E8F4FD 0%,#D4FFF0 100%);text-align:center;overflow:hidden;">
+  <section id="contato" style="position:relative;padding:64px 25px;background:linear-gradient(135deg,#E8F4FD 0%,#D4FFF0 100%);text-align:center;overflow:hidden;">
     <h2 style="font-size:clamp(1.8rem,3.6vw,2.6rem);font-weight:700;margin:0 0 16px;color:#0A1628;position:relative;z-index:2;">Venha construir o futuro com a gente</h2>
     <p style="font-size:1.05rem;color:#3A4A6B;margin:0 0 36px;position:relative;z-index:2;">Confira as vagas abertas e dê o próximo passo na sua carreira.</p>
     <a href="https://inovacaobrain.com.br/carreiras/" target="_blank" rel="noopener" style="display:inline-block;padding:16px 36px;border-radius:8px;font-weight:700;font-size:14px;background:linear-gradient(135deg,#006EE6 0%,#41FF28 100%);background-size:160% 100%;background-position:0% 0%;color:#FFFFFF;position:relative;z-index:2;transition:background-position 0.4s ease, transform 0.2s ease;" style-hover="background-position:100% 0%;transform:translateY(-2px);">Veja nossas vagas</a>
@@ -323,27 +233,6 @@ class Component extends DCLogic {
 
     return {
       glassCard, glassCardHover, glassRow, glassRowHover, glassHighlight, glassIconBox,
-      culture: [
-        { icon: 'assets/comp_icon-lightbulb-3d.png', title: 'Curiosidade', desc: 'Buscamos entender o "porquê" antes do "como". A curiosidade nos leva a soluções que ninguém imaginou.', duration: 5 },
-        { icon: 'assets/comp_icon-digital-3d.png', title: 'Adaptabilidade', desc: 'Mudamos de rota rápido. A tecnologia evolui todo dia e nós evoluímos junto.', duration: 5.4 },
-        { icon: 'assets/comp_icon-team-3d.png', title: 'Colaboração', desc: 'Squads multidisciplinares unem tecnologia, negócios e design para criar soluções.', duration: 4.8 },
-      ],
-      benefits: [
-        { icon: 'assets/comp_icon-health-3d.png', title: 'Plano de Saúde', desc: 'Cobertura completa para você e sua família', duration: 4.2 },
-        { icon: 'assets/comp_icon-cloud-3d.png', title: 'Assistência Odontológica', desc: 'Plano odontológico para cuidar do seu sorriso', duration: 4.6 },
-        { icon: 'assets/comp_icon-lightbulb-3d.png', title: 'Cartão Caju', desc: 'Multibenefícios com flexibilidade de uso', duration: 4.0 },
-        { icon: 'assets/comp_icon-rocket-3d.png', title: 'Remuneração Variável', desc: 'Bônus por desempenho e resultados', duration: 4.8 },
-        { icon: 'assets/comp_icon-5g-3d.png', title: 'Gympass', desc: 'Acesso a academias e bem-estar', duration: 4.4 },
-        { icon: 'assets/comp_icon-globe-3d.png', title: 'Psicologia Viva', desc: 'Apoio psicológico para equilíbrio emocional', duration: 5.0 },
-        { icon: 'assets/comp_icon-digital-3d.png', title: 'Auxílio Educação', desc: 'Valor para investimento em cursos e especializações', duration: 4.3 },
-        { icon: 'assets/comp_icon-training-3d.png', title: 'Capacitações', desc: 'Treinamentos internos e acesso a plataformas de aprendizado', duration: 4.7 },
-        { icon: 'assets/comp_icon-team-3d.png', title: 'Anywhere Office', desc: 'Trabalhe de onde quiser com flexibilidade total', duration: 4.5 },
-      ],
-      offices: [
-        { number: '01', city: 'Uberlândia', state: 'Minas Gerais', desc: 'Sede principal com Squads multidisciplinares' },
-        { number: '02', city: 'São Paulo', state: 'São Paulo', desc: 'Hub estratégico com conexão direta ao mercado' },
-        { number: '03', city: 'Recife', state: 'Pernambuco', desc: 'Centro de inovação no Nordeste' },
-      ],
       timeline: [
         { step: '1', title: 'Inscrição', desc: 'Envie seu currículo e nos conte sobre sua experiência e motivação', duration: '~5 min', icon: 'assets/comp_icon-digital-3d.png', delay: 0 },
         { step: '2', title: 'Triagem', desc: 'Nosso time analisa seu perfil e entra em contato com os candidatos alinhados', duration: '~3 dias', icon: 'assets/comp_icon-consultancy-3d.png', delay: 0.4 },
