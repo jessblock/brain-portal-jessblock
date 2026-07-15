@@ -31,9 +31,18 @@
       .r-grid3, .r-grid4, .r-grid5, .r-form2 { grid-template-columns: 1fr !important; }
       .r-footer { grid-template-columns: 1fr !important; }
       .r-blogfeatured > a { grid-column: span 1 !important; grid-row: span 1 !important; }
+      .mobile-stack { display: flex !important; flex-direction: column !important; }
+      .mobile-hide-img { display: none !important; }
+      .mobile-center { text-align: center !important; }
+      .mobile-gap-sm { gap: 16px !important; }
     }
     @media (max-width:560px) {
       section { padding-left: 16px !important; padding-right: 16px !important; }
+      .r-grid3, .r-grid4, .r-grid5 { grid-template-columns: 1fr !important; }
+    }
+    @media (max-width:480px) {
+      h1 { font-size: 1.8rem !important; }
+      h2 { font-size: 1.5rem !important; }
     }
   </style>
 </helmet>
@@ -55,7 +64,7 @@
   </header>
 
   <!-- ============ HERO ============ -->
-  <section style="position:relative;padding:96px 25px 70px;overflow:hidden;background:radial-gradient(circle at 15% 20%, rgba(0,110,230,0.06) 0%, transparent 45%), radial-gradient(circle at 85% 80%, rgba(65,255,40,0.05) 0%, transparent 45%);">
+  <section style="position:relative;padding:clamp(60px,8vw,96px) 25px clamp(40px,5vw,70px);overflow:hidden;background:radial-gradient(circle at 15% 20%, rgba(0,110,230,0.06) 0%, transparent 45%), radial-gradient(circle at 85% 80%, rgba(65,255,40,0.05) 0%, transparent 45%);">
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
       <span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:7px 16px;background:#006EE6;border-radius:6px;margin-bottom:24px;">#brainblog</span>
       <h1 style="font-size:clamp(2.2rem,4.2vw,3.4rem);font-weight:800;line-height:1.14;letter-spacing:-0.02em;margin:0 0 16px;color:#0A1628;max-width:760px;">
@@ -79,7 +88,7 @@
   </div>
 
   <!-- ============ GRID DE POSTS ============ -->
-  <section style="position:relative;padding:80px 25px;background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);overflow:hidden;">
+  <section style="position:relative;padding:64px 25px;background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);overflow:hidden;">
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
       <div style="text-align:center;max-width:640px;margin:0 auto 50px;">
         <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:6px 14px;background:#006EE6;border-radius:6px;margin:0 0 16px;">Posts recentes</p>
@@ -109,7 +118,7 @@
   </div>
 
   <!-- ============ MAIS LIDOS ============ -->
-  <section style="padding:80px 25px;background:#FFFFFF;">
+  <section style="padding:64px 25px;background:#FFFFFF;">
     <div style="max-width:1240px;margin:0 auto;">
       <div style="text-align:center;max-width:640px;margin:0 auto 50px;">
         <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 16px;">Mais lidos</p>
@@ -132,7 +141,7 @@
   </div>
 
   <!-- ============ NEWSLETTER ============ -->
-  <section id="contato" style="position:relative;padding:90px 25px;background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);text-align:center;overflow:hidden;">
+  <section id="contato" style="position:relative;padding:64px 25px;background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);text-align:center;overflow:hidden;">
     <div style="max-width:640px;margin:0 auto;position:relative;z-index:2;">
       <h2 style="font-size:clamp(1.8rem,3.2vw,2.4rem);font-weight:700;margin:0 0 16px;color:#0A1628;">Receba conteúdos sobre inovação direto no seu e-mail</h2>
       <p style="font-size:1.05rem;color:#3A4A6B;margin:0 0 32px;">Sem spam. Só artigos que ajudam você a decidir melhor.</p>
