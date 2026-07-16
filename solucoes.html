@@ -49,6 +49,21 @@
       h1 { font-size: 1.8rem !important; }
       h2 { font-size: 1.5rem !important; }
     }
+    /* ===== solucoes.html: correcoes especificas ===== */
+    @media (max-width:700px) {
+      .sol-section-fix {
+        padding-top: 48px !important;
+        padding-bottom: 48px !important;
+      }
+      .sol-cases-numero { font-size: 2.4rem !important; }
+      .sol-iot-icon { max-width: 240px !important; width: 240px !important; }
+    }
+    @media (max-width:480px) {
+      .sol-section-fix {
+        padding-top: 36px !important;
+        padding-bottom: 36px !important;
+      }
+    }
   </style>
 
 
@@ -78,7 +93,7 @@
   </header>
 
   <!-- ============ HERO ============ -->
-  <section style="position:relative;padding:64px 25px 48px;overflow:hidden;background:radial-gradient(circle at 15% 20%, rgba(0,110,230,0.06) 0%, transparent 45%), radial-gradient(circle at 85% 80%, rgba(65,255,40,0.05) 0%, transparent 45%);">
+  <section class="sol-section-fix" style="position:relative;padding:64px 25px 48px;overflow:hidden;background:radial-gradient(circle at 15% 20%, rgba(0,110,230,0.06) 0%, transparent 45%), radial-gradient(circle at 85% 80%, rgba(65,255,40,0.05) 0%, transparent 45%);">
 
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
       <div style="display:flex;align-items:center;justify-content:center;gap:24px;padding:20px 0 40px;">
@@ -114,7 +129,7 @@
   </div>
 
   <!-- ============ SERVIÇOS ============ -->
-  <section style="position:relative;padding:64px 25px;overflow:hidden;">
+  <section class="sol-section-fix" style="position:relative;padding:64px 25px;overflow:hidden;">
     <img src="uploads/comp_photo_9023.jpg" alt="" style="position:absolute;top:-20px;left:-20px;width:calc(100% + 40px);height:calc(100% + 40px);object-fit:cover;filter:blur(20px) saturate(115%);transform:scale(1.02);z-index:0;" />
     <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(3,22,50,0.87) 0%,rgba(3,48,30,0.83) 100%);z-index:1;"></div>
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
@@ -151,7 +166,7 @@
   </div>
 
   <!-- ============ OPEN INNOVATION - PROCESSO ============ -->
-  <section style="position:relative;padding:64px 25px;background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);overflow:hidden;">
+  <section class="sol-section-fix" style="position:relative;padding:64px 25px;background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);overflow:hidden;">
 
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
       <div style="text-align:center;max-width:680px;margin:0 auto 56px;">
@@ -181,7 +196,7 @@
   </div>
 
   <!-- ============ RESULTADOS ============ -->
-  <section style="padding:64px 25px;background:#FFFFFF;">
+  <section class="sol-section-fix" style="padding:64px 25px;background:#FFFFFF;">
     <div style="max-width:1240px;margin:0 auto;">
       <div style="text-align:center;max-width:680px;margin:0 auto 56px;">
         <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:6px 14px;background:#006EE6;border-radius:6px;margin:0 0 16px;">Resultados que falam</p>
@@ -191,7 +206,7 @@
         <div class="r-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
         <sc-for list="{{ cases }}" as="c" hint-placeholder-count="3">
           <div style="position:relative;text-align:center;padding:44px 28px;{{ glassCard }}border-radius:16px;transition:transform 0.35s ease, box-shadow 0.35s ease;" style-hover="{{ glassCardHover }}" style-before="{{ glassHighlight }}">
-            <div style="font-size:3.2rem;font-weight:800;color:#006EE6;line-height:1;margin-bottom:8px;">{{ c.number }}</div>
+            <div class="sol-cases-numero" style="font-size:3.2rem;font-weight:800;color:#006EE6;line-height:1;margin-bottom:8px;">{{ c.number }}</div>
             <p style="font-size:0.9rem;color:#6B7A9A;margin:0 0 16px;">{{ c.unit }}</p>
             <h4 style="font-size:1.05rem;color:#0A1628;margin:0 0 10px;">{{ c.title }}</h4>
             <p style="font-size:0.9rem;color:#3A4A6B;line-height:1.6;margin:0;">{{ c.desc }}</p>
@@ -208,7 +223,7 @@
   </div>
 
   <!-- ============ IoT MULTICONNECT ============ -->
-  <section style="position:relative;padding:64px 25px;overflow:hidden;">
+  <section class="sol-section-fix" style="position:relative;padding:64px 25px;overflow:hidden;">
     <img src="uploads/comp_photo_9649.jpg" alt="" style="position:absolute;top:-20px;left:-20px;width:calc(100% + 40px);height:calc(100% + 40px);object-fit:cover;filter:blur(20px) saturate(115%);transform:scale(1.02);z-index:0;">
     <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(3,22,50,0.88) 0%,rgba(3,48,30,0.84) 100%);z-index:1;"></div>
       <div class="r-hero2" style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:center;position:relative;z-index:2;">
@@ -231,7 +246,7 @@
         </div>
       </div>
       <div style="display:flex;justify-content:center;align-items:center;">
-        <img src="assets/comp_icon-iot-3d.png" alt="" style="width:400px;max-width:100%;height:auto;object-fit:contain;animation:floatY 5s ease-in-out infinite, glowBreathe 4s ease-in-out infinite, rotate3d 5s ease-in-out infinite;">
+        <img src="assets/comp_icon-iot-3d.png" alt="" class="sol-iot-icon" style="width:400px;max-width:100%;height:auto;object-fit:contain;animation:floatY 5s ease-in-out infinite, glowBreathe 4s ease-in-out infinite, rotate3d 5s ease-in-out infinite;">
       </div>
     </div>
   </section>
@@ -243,7 +258,7 @@
   </div>
 
   <!-- ============ FORMULÁRIO B2B ============ -->
-  <section id="contato" style="padding:64px 25px;background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);">
+  <section id="contato" class="sol-section-fix" style="padding:64px 25px;background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);">
     <div style="max-width:1240px;margin:0 auto;">
       <div style="text-align:center;max-width:680px;margin:0 auto 48px;">
         <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 16px;">Vamos conversar</p>
@@ -277,7 +292,7 @@
   </div>
 
   <!-- ============ FOOTER ============ -->
-  <footer style="position:relative;padding:64px 25px 32px;background:#FFFFFF;border-top:1px solid rgba(0,0,0,0.06);overflow:hidden;">
+  <footer class="sol-section-fix" style="position:relative;padding:64px 25px 32px;background:#FFFFFF;border-top:1px solid rgba(0,0,0,0.06);overflow:hidden;">
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
       <div class="r-footer" style="display:grid;grid-template-columns:1.3fr 1fr 1fr auto;gap:24px;margin-bottom:32px;align-items:start;">
         <div>

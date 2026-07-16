@@ -44,6 +44,19 @@
       h1 { font-size: 1.8rem !important; }
       h2 { font-size: 1.5rem !important; }
     }
+    /* ===== blog.html: correcoes especificas ===== */
+    @media (max-width:700px) {
+      .blog-section-fix {
+        padding-top: 48px !important;
+        padding-bottom: 48px !important;
+      }
+    }
+    @media (max-width:480px) {
+      .blog-section-fix {
+        padding-top: 36px !important;
+        padding-bottom: 36px !important;
+      }
+    }
   </style>
 </helmet>
 
@@ -88,7 +101,7 @@
   </div>
 
   <!-- ============ GRID DE POSTS ============ -->
-  <section style="position:relative;padding:64px 25px;background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);overflow:hidden;">
+  <section class="blog-section-fix" style="position:relative;padding:64px 25px;background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);overflow:hidden;">
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
       <div style="text-align:center;max-width:640px;margin:0 auto 50px;">
         <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:6px 14px;background:#006EE6;border-radius:6px;margin:0 0 16px;">Posts recentes</p>
@@ -118,7 +131,7 @@
   </div>
 
   <!-- ============ MAIS LIDOS ============ -->
-  <section style="padding:64px 25px;background:#FFFFFF;">
+  <section class="blog-section-fix" style="padding:64px 25px;background:#FFFFFF;">
     <div style="max-width:1240px;margin:0 auto;">
       <div style="text-align:center;max-width:640px;margin:0 auto 50px;">
         <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 16px;">Mais lidos</p>
@@ -141,7 +154,7 @@
   </div>
 
   <!-- ============ NEWSLETTER ============ -->
-  <section id="contato" style="position:relative;padding:64px 25px;background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);text-align:center;overflow:hidden;">
+  <section id="contato" class="blog-section-fix" style="position:relative;padding:64px 25px;background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);text-align:center;overflow:hidden;">
     <div style="max-width:640px;margin:0 auto;position:relative;z-index:2;">
       <h2 style="font-size:clamp(1.8rem,3.2vw,2.4rem);font-weight:700;margin:0 0 16px;color:#0A1628;">Receba conteúdos sobre inovação direto no seu e-mail</h2>
       <p style="font-size:1.05rem;color:#3A4A6B;margin:0 0 32px;">Sem spam. Só artigos que ajudam você a decidir melhor.</p>
@@ -153,7 +166,7 @@
   </section>
 
   <!-- ============ FOOTER ============ -->
-  <footer style="position:relative;padding:64px 25px 32px;background:#FFFFFF;border-top:1px solid rgba(0,0,0,0.06);overflow:hidden;">
+  <footer class="blog-section-fix" style="position:relative;padding:64px 25px 32px;background:#FFFFFF;border-top:1px solid rgba(0,0,0,0.06);overflow:hidden;">
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
       <div class="r-footer" style="display:grid;grid-template-columns:1.3fr 1fr 1fr auto;gap:40px;margin-bottom:44px;align-items:start;">
         <div>

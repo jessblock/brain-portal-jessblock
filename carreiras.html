@@ -56,6 +56,26 @@
       h1 { font-size: 1.8rem !important; }
       h2 { font-size: 1.5rem !important; }
     }
+    /* ===== carreiras.html: correcoes especificas ===== */
+    @media (max-width:700px) {
+      .car-section-fix {
+        padding-top: 48px !important;
+        padding-bottom: 48px !important;
+      }
+      .car-timeline-container {
+        padding: 24px 16px 32px !important;
+      }
+      .car-culture-icon { width: 100px !important; height: 100px !important; }
+    }
+    @media (max-width:480px) {
+      .car-section-fix {
+        padding-top: 36px !important;
+        padding-bottom: 36px !important;
+      }
+      .car-timeline-container {
+        padding: 20px 12px 28px !important;
+      }
+    }
   </style>
 </helmet>
 
@@ -115,7 +135,7 @@
   </div>
 
   <!-- ============ CULTURA ============ -->
-  <section style="position:relative;padding:64px 25px;overflow:hidden;">
+  <section class="car-section-fix" style="position:relative;padding:64px 25px;overflow:hidden;">
     <img src="uploads/comp_photo_9658.jpg" alt="" style="position:absolute;top:-20px;left:-20px;width:calc(100% + 40px);height:calc(100% + 40px);object-fit:cover;filter:blur(20px) saturate(115%);transform:scale(1.02);z-index:0;">
     <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(3,22,50,0.87) 0%,rgba(3,48,30,0.83) 100%);z-index:1;"></div>
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
@@ -127,7 +147,7 @@
       <div class="r-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:25px;">
         <sc-for list="{{ culture }}" as="c" hint-placeholder-count="3">
           <div style="position:relative;text-align:center;padding:40px 26px;{{ glassCard }}transition:transform 0.35s ease, box-shadow 0.35s ease;" style-hover="{{ glassCardHover }}" style-before="{{ glassHighlight }}">
-            <div style="width:130px;height:130px;margin:0 auto 20px;">
+            <div class="car-culture-icon" style="width:130px;height:130px;margin:0 auto 20px;">
               <img src="{{ c.icon }}" alt="" style="width:100%;height:100%;object-fit:contain;animation:floatY {{ c.duration }}s ease-in-out infinite, glowBreathe 4s ease-in-out infinite;" />
             </div>
             <h4 style="font-size:1.1rem;font-weight:600;margin:0 0 10px;color:#FFFFFF;">{{ c.title }}</h4>
@@ -145,7 +165,7 @@
   </div>
 
   <!-- ============ BENEFÍCIOS ============ -->
-  <section id="beneficios" style="position:relative;padding:64px 25px;background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);overflow:hidden;">
+  <section id="beneficios" class="car-section-fix" style="position:relative;padding:64px 25px;background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);overflow:hidden;">
     <div style="position:absolute;top:20px;right:-60px;width:280px;height:280px;border-radius:50%;background:#FFC300;opacity:0.12;filter:blur(70px);"></div>
     <div style="position:absolute;bottom:-40px;left:-60px;width:260px;height:260px;border-radius:50%;background:#006EE6;opacity:0.1;filter:blur(70px);"></div>
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
@@ -177,7 +197,7 @@
   </div>
 
   <!-- ============ ESCRITÓRIOS ============ -->
-  <section style="padding:64px 25px;background:#FFFFFF;">
+  <section class="car-section-fix" style="padding:64px 25px;background:#FFFFFF;">
     <div style="max-width:1240px;margin:0 auto;">
       <div style="text-align:center;max-width:680px;margin:0 auto 56px;">
         <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:6px 14px;background:#006EE6;border-radius:6px;margin:0 0 16px;">Presença</p>
@@ -204,7 +224,7 @@
   </div>
 
   <!-- ============ TIMELINE: JORNADA DE SELEÇÃO ============ -->
-  <section style="position:relative;padding:64px 25px;overflow:hidden;">
+  <section class="car-section-fix" style="position:relative;padding:64px 25px;overflow:hidden;">
     <img src="uploads/comp_photo_9663.jpg" alt="" style="position:absolute;top:-20px;left:-20px;width:calc(100% + 40px);height:calc(100% + 40px);object-fit:cover;filter:blur(20px) saturate(115%);transform:scale(1.02);z-index:0;">
     <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(3,22,50,0.87) 0%,rgba(3,48,30,0.83) 100%);z-index:1;"></div>
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
@@ -213,7 +233,7 @@
         <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 12px;color:#FFFFFF;">A jornada de seleção</h2>
         <p style="font-size:1.05rem;color:rgba(255,255,255,0.82);margin:0;">Transparente, ágil e com feedback em cada etapa</p>
       </div>
-      <div style="position:relative;max-width:1160px;margin:0 auto;background:rgba(255,255,255,0.14);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);border:1px solid rgba(255,255,255,0.3);border-radius:24px;padding:clamp(28px,4vw,44px) clamp(16px,3vw,32px) 36px;">
+      <div class="car-timeline-container" style="position:relative;max-width:1160px;margin:0 auto;background:rgba(255,255,255,0.14);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);border:1px solid rgba(255,255,255,0.3);border-radius:24px;padding:clamp(28px,4vw,44px) clamp(16px,3vw,32px) 36px;">
         <div class="mobile-hide-img" style="position:absolute;top:96px;left:8%;right:8%;height:3px;background:linear-gradient(90deg,#006EE6,#41FF28,#FFC300,#006EE6,#41FF28);background-size:200% 100%;opacity:0.4;animation:barShift 6s linear infinite;"></div>
         <div class="r-grid5" style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px;">
           <sc-for list="{{ timeline }}" as="t" hint-placeholder-count="5">
@@ -241,14 +261,14 @@
   </div>
 
   <!-- ============ CTA FINAL ============ -->
-  <section style="position:relative;padding:64px 25px;background:linear-gradient(135deg,#E8F4FD 0%,#D4FFF0 100%);text-align:center;overflow:hidden;">
+  <section class="car-section-fix" style="position:relative;padding:64px 25px;background:linear-gradient(135deg,#E8F4FD 0%,#D4FFF0 100%);text-align:center;overflow:hidden;">
     <h2 style="font-size:clamp(1.8rem,3.6vw,2.6rem);font-weight:700;margin:0 0 16px;color:#0A1628;position:relative;z-index:2;">Venha construir o futuro com a gente</h2>
     <p style="font-size:1.05rem;color:#3A4A6B;margin:0 0 36px;position:relative;z-index:2;">Confira as vagas abertas e dê o próximo passo na sua carreira.</p>
     <a href="https://inovacaobrain.com.br/carreiras/" target="_blank" rel="noopener" style="display:inline-block;padding:16px 36px;border-radius:8px;font-weight:700;font-size:14px;background:linear-gradient(135deg,#006EE6 0%,#41FF28 100%);background-size:160% 100%;background-position:0% 0%;color:#FFFFFF;position:relative;z-index:2;transition:background-position 0.4s ease, transform 0.2s ease;" style-hover="background-position:100% 0%;transform:translateY(-2px);">Veja nossas vagas</a>
   </section>
 
   <!-- ============ FOOTER ============ -->
-  <footer style="position:relative;padding:64px 25px 32px;background:#FFFFFF;border-top:1px solid rgba(0,0,0,0.06);overflow:hidden;">
+  <footer class="car-section-fix" style="position:relative;padding:64px 25px 32px;background:#FFFFFF;border-top:1px solid rgba(0,0,0,0.06);overflow:hidden;">
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
       <div class="r-footer" style="display:grid;grid-template-columns:1.3fr 1fr 1fr auto;gap:40px;margin-bottom:44px;align-items:start;">
         <div>
