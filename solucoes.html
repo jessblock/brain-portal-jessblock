@@ -156,8 +156,8 @@
     <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(3,22,50,0.87) 0%,rgba(3,48,30,0.83) 100%);z-index:1;"></div>
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
       <div style="text-align:center;max-width:680px;margin:0 auto 56px;">
-        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 16px;">Nossa abordagem</p>
-        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 20px;color:#FFFFFF;">Como podemos ajudar sua empresa a inovar?</h2>
+        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 var(--bb-badge-mb);">Nossa abordagem</p>
+        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 var(--bb-gutter);color:#FFFFFF;">Como podemos ajudar sua empresa a inovar?</h2>
         <p style="font-size:1.05rem;color:rgba(255,255,255,0.82);margin:0;">Um amplo portfólio de serviços, de treinamentos a consultoria especializada, para todo o processo de inovação</p>
       </div>
         <div class="r-grid4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--bb-gutter);">
@@ -166,7 +166,7 @@
             <div style="width:96px;height:96px;margin:0 auto 16px;">
               <img src="{{ s.icon }}" alt="" style="width:100%;height:100%;object-fit:contain;animation:floatY {{ s.duration }}s ease-in-out infinite, glowBreathe 4s ease-in-out infinite;">
             </div>
-            <h3 style="font-size:1.05rem;font-weight:700;margin:0 0 16px;color:#FFFFFF;">{{ s.title }}</h3>
+            <h3 style="font-size:1.05rem;font-weight:700;margin:0 0 var(--bb-badge-mb);color:#FFFFFF;">{{ s.title }}</h3>
             <ul style="list-style:none;margin:0;padding:0;text-align:left;display:flex;flex-direction:column;gap:var(--bb-inner-gap);">
               <sc-for list="{{ s.items }}" as="it" hint-placeholder-count="4">
                 <li style="font-size:0.82rem;color:rgba(255,255,255,0.85);line-height:1.4;padding-left:14px;position:relative;">
@@ -192,8 +192,8 @@
 
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
       <div style="text-align:center;max-width:680px;margin:0 auto 56px;">
-        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 16px;">Open Innovation</p>
-        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 20px;color:#0A1628;">O processo de inovação aberta</h2>
+        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 var(--bb-badge-mb);">Open Innovation</p>
+        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 var(--bb-gutter);color:#0A1628;">O processo de inovação aberta</h2>
         <p style="font-size:1.05rem;color:#3A4A6B;margin:0;">Conectamos sua empresa ao ecossistema de startups, pesquisa e tecnologia do Brain</p>
       </div>
       <div class="r-grid4" style="position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:var(--bb-gutter);">
@@ -221,7 +221,7 @@
   <section class="sol-section-fix" style="padding:var(--bb-section) var(--bb-margin);background:#FFFFFF;">
     <div style="max-width:1240px;margin:0 auto;">
       <div style="text-align:center;max-width:680px;margin:0 auto 56px;">
-        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:6px 14px;background:#006EE6;border-radius:6px;margin:0 0 16px;">Resultados que falam</p>
+        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:6px 14px;background:#006EE6;border-radius:6px;margin:0 0 var(--bb-badge-mb);">Resultados que falam</p>
         <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 8px;color:#0A1628;">Números que comprovam</h2>
         <p style="font-size:0.8rem;color:#6B7A9A;letter-spacing:0.03em;margin:0;">DESDE. 2018 · Instituto de Ciência e Tecnologia</p>
       </div>
@@ -229,7 +229,7 @@
         <sc-for list="{{ cases }}" as="c" hint-placeholder-count="3">
           <div style="position:relative;text-align:center;padding:44px 28px;{{ glassCard }}border-radius:16px;transition:transform 0.35s ease, box-shadow 0.35s ease;" style-hover="{{ glassCardHover }}" style-before="{{ glassHighlight }}">
             <div class="sol-cases-numero" style="font-size:3.2rem;font-weight:800;color:#006EE6;line-height:1;margin-bottom:8px;">{{ c.number }}</div>
-            <p style="font-size:0.9rem;color:#6B7A9A;margin:0 0 16px;">{{ c.unit }}</p>
+            <p style="font-size:0.9rem;color:#6B7A9A;margin:0 0 var(--bb-badge-mb);">{{ c.unit }}</p>
             <h4 style="font-size:1.05rem;color:#0A1628;margin:0 0 var(--bb-gutter);">{{ c.title }}</h4>
             <p style="font-size:0.9rem;color:#3A4A6B;line-height:1.6;margin:0;">{{ c.desc }}</p>
           </div>
@@ -250,7 +250,7 @@
     <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(3,22,50,0.88) 0%,rgba(3,48,30,0.84) 100%);z-index:1;"></div>
       <div class="r-hero2" style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr;gap:var(--bb-gutter);align-items:center;position:relative;z-index:2;">
       <div>
-        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 16px;">Tecnologia proprietária</p>
+        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 var(--bb-badge-mb);">Tecnologia proprietária</p>
         <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 var(--bb-gutter);color:#FFFFFF;">IoT Multiconnect</h2>
         <p style="font-size:1.05rem;line-height:1.85;color:rgba(255,255,255,0.82);margin:0 0 var(--bb-title-mb);">
           Nossa plataforma de IoT conecta dispositivos, sensores e sistemas em uma única rede inteligente. Com tecnologia 5G e Edge Computing, entregamos conectividade de baixa latência para operações críticas em tempo real.
@@ -283,11 +283,11 @@
   <section id="contato" class="sol-section-fix" style="padding:var(--bb-section) var(--bb-margin);background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);">
     <div style="max-width:1240px;margin:0 auto;">
       <div style="text-align:center;max-width:680px;margin:0 auto 48px;">
-        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 16px;">Vamos conversar</p>
-        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 20px;color:#0A1628;">Conte-nos sobre o seu desafio</h2>
+        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 var(--bb-badge-mb);">Vamos conversar</p>
+        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 var(--bb-gutter);color:#0A1628;">Conte-nos sobre o seu desafio</h2>
         <p style="font-size:1.05rem;color:#3A4A6B;margin:0;">Preencha o formulário e nossa equipe entrará em contato em até 24 horas.</p>
       </div>
-      <form style="position:relative;max-width:720px;margin:0 auto;{{ glassCard }}padding:clamp(20px,4vw,44px);border-radius:20px;">
+      <form style="position:relative;max-width:720px;margin:0 auto;{{ glassCard }}padding:clamp(15px,3vw,44px);border-radius:20px;">
         <div class="r-form2" style="display:grid;grid-template-columns:1fr 1fr;gap:var(--bb-gutter);margin-bottom:var(--bb-gutter);">
           <div>
             <label style="display:block;font-size:0.85rem;font-weight:600;color:#0A1628;margin-bottom:8px;">Nome completo</label>
@@ -324,7 +324,7 @@
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
       <div class="r-footer" style="display:grid;grid-template-columns:1.3fr 1fr 1fr auto;gap:var(--bb-gutter);margin-bottom:var(--bb-gutter);align-items:start;">
         <div>
-          <img src="assets/brain-logo-fullcolor.png" alt="Brain" style="height:32px;width:auto;margin-bottom:16px;" />
+          <img src="assets/brain-logo-fullcolor.png" alt="Brain" style="height:32px;width:auto;margin-bottom:var(--bb-badge-mb);" />
           <p style="font-size:0.85rem;color:#6B7A9A;line-height:1.7;margin:0;max-width:260px;">Instituto de Ciência e Tecnologia. Inovando com propósito desde a fundação pela Algar Telecom.</p>
         </div>
         <div style="display:flex;flex-direction:column;gap:var(--bb-inner-gap);">

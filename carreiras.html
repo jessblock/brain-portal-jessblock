@@ -119,7 +119,7 @@
   </header>
 
   <!-- ============ HERO ============ -->
-  <section style="position:relative;padding:clamp(60px,8vw,100px) 25px clamp(50px,6vw,80px);overflow:hidden;background:radial-gradient(circle at 15% 20%, rgba(0,110,230,0.06) 0%, transparent 45%), radial-gradient(circle at 85% 80%, rgba(65,255,40,0.05) 0%, transparent 45%);">
+  <section style="position:relative;padding:clamp(15px,4vw,100px) var(--bb-margin) clamp(12px,3vw,80px);overflow:hidden;background:radial-gradient(circle at 15% 20%, rgba(0,110,230,0.06) 0%, transparent 45%), radial-gradient(circle at 85% 80%, rgba(65,255,40,0.05) 0%, transparent 45%);">
 
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
       <div class="r-hero2" style="display:grid;grid-template-columns:1.1fr 1fr;gap:var(--bb-gutter);align-items:center;">
@@ -155,7 +155,7 @@
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
       <div style="text-align:center;max-width:680px;margin:0 auto 56px;">
         <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 var(--bb-gutter);">Por que o Brain</p>
-        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 20px;color:#FFFFFF;">Cultura que transforma</h2>
+        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 var(--bb-gutter);color:#FFFFFF;">Cultura que transforma</h2>
         <p style="font-size:1.05rem;color:rgba(255,255,255,0.82);margin:0;">Profissionais movidos por curiosidade, adaptabilidade e colaboração</p>
       </div>
       <div class="r-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--bb-gutter);">
@@ -185,7 +185,7 @@
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
       <div style="text-align:center;max-width:680px;margin:0 auto 56px;">
         <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 var(--bb-gutter);">Benefícios</p>
-        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 20px;color:#0A1628;">Cuidamos de quem inova</h2>
+        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 var(--bb-gutter);color:#0A1628;">Cuidamos de quem inova</h2>
         <p style="font-size:1.05rem;color:#3A4A6B;margin:0;">Pacote completo para que você foque no que realmente importa</p>
       </div>
       <div class="r-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--bb-gutter);">
@@ -215,15 +215,15 @@
     <div style="max-width:1240px;margin:0 auto;">
       <div style="text-align:center;max-width:680px;margin:0 auto 56px;">
         <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:6px 14px;background:#006EE6;border-radius:6px;margin:0 0 var(--bb-gutter);">Presença</p>
-        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 20px;color:#0A1628;">Onde estamos</h2>
+        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 var(--bb-gutter);color:#0A1628;">Onde estamos</h2>
         <p style="font-size:1.05rem;color:#3A4A6B;margin:0;">Três escritórios pelo Brasil, operando em Anywhere Office</p>
       </div>
       <div class="r-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--bb-gutter);">
         <sc-for list="{{ offices }}" as="o" hint-placeholder-count="3">
           <div style="position:relative;padding:36px 26px;{{ glassCard }}transition:transform 0.3s ease, box-shadow 0.3s ease;" style-hover="{{ glassCardHover }}" style-before="{{ glassHighlight }}">
-            <div style="font-size:0.85rem;font-weight:700;color:#006EE6;margin-bottom:14px;">{{ o.number }}</div>
+            <div style="font-size:0.85rem;font-weight:700;color:#006EE6;margin-bottom:var(--bb-badge-mb);">{{ o.number }}</div>
             <h4 style="font-size:1.2rem;margin:0 0 8px;color:#0A1628;">{{ o.city }}</h4>
-            <p style="font-size:0.85rem;font-weight:600;color:#006EE6;text-transform:uppercase;letter-spacing:0.05em;margin:0 0 20px;">{{ o.state }}</p>
+            <p style="font-size:0.85rem;font-weight:600;color:#006EE6;text-transform:uppercase;letter-spacing:0.05em;margin:0 0 var(--bb-gutter);">{{ o.state }}</p>
             <p style="font-size:0.9rem;color:#3A4A6B;line-height:1.6;margin:0;">{{ o.desc }}</p>
           </div>
         </sc-for>
@@ -244,15 +244,15 @@
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
       <div style="text-align:center;max-width:680px;margin:0 auto 56px;">
         <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 var(--bb-gutter);">Processo seletivo</p>
-        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 20px;color:#FFFFFF;">A jornada de seleção</h2>
+        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 var(--bb-gutter);color:#FFFFFF;">A jornada de seleção</h2>
         <p style="font-size:1.05rem;color:rgba(255,255,255,0.82);margin:0;">Transparente, ágil e com feedback em cada etapa</p>
       </div>
-      <div class="car-timeline-container" style="position:relative;max-width:1160px;margin:0 auto;background:rgba(255,255,255,0.14);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);border:1px solid rgba(255,255,255,0.3);border-radius:24px;padding:clamp(28px,4vw,44px) clamp(16px,3vw,32px) 36px;">
+      <div class="car-timeline-container" style="position:relative;max-width:1160px;margin:0 auto;background:rgba(255,255,255,0.14);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);border:1px solid rgba(255,255,255,0.3);border-radius:24px;padding:clamp(16px,3vw,44px) clamp(12px,2vw,32px) 25px;">
         <div class="mobile-hide-img" style="position:absolute;top:96px;left:8%;right:8%;height:3px;background:linear-gradient(90deg,#006EE6,#41FF28,#FFC300,#006EE6,#41FF28);background-size:200% 100%;opacity:0.4;animation:barShift 6s linear infinite;"></div>
         <div class="r-grid5" style="display:grid;grid-template-columns:repeat(5,1fr);gap:var(--bb-gutter);">
           <sc-for list="{{ timeline }}" as="t" hint-placeholder-count="5">
             <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;">
-              <div style="position:relative;width:104px;height:104px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
+              <div style="position:relative;width:104px;height:104px;display:flex;align-items:center;justify-content:center;margin-bottom:var(--bb-gutter);">
                 <div style="position:absolute;inset:0;border-radius:50%;background:linear-gradient(135deg,#006EE6,#41FF28);opacity:0.22;animation:pulseGlow 2.6s ease-in-out infinite {{ t.delay }}s;"></div>
                 <div style="position:relative;width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#006EE6,#41FF28);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px -8px rgba(0,10,20,0.4);animation:floatYsm 4.4s ease-in-out infinite {{ t.delay }}s;">
                   <img src="{{ t.icon }}" alt="" style="width:52px;height:52px;object-fit:contain;" />
@@ -292,7 +292,7 @@
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
       <div class="r-footer" style="display:grid;grid-template-columns:1.3fr 1fr 1fr auto;gap:var(--bb-gutter);margin-bottom:var(--bb-gutter);align-items:start;">
         <div>
-          <img src="assets/brain-logo-fullcolor.png" alt="Brain" style="height:32px;width:auto;margin-bottom:16px;" />
+          <img src="assets/brain-logo-fullcolor.png" alt="Brain" style="height:32px;width:auto;margin-bottom:var(--bb-badge-mb);" />
           <p style="font-size:0.85rem;color:#6B7A9A;line-height:1.7;margin:0;max-width:260px;">Instituto de Ciência e Tecnologia. Inovando com propósito desde a fundação pela Algar Telecom.</p>
         </div>
         <div style="display:flex;flex-direction:column;gap:var(--bb-inner-gap);">

@@ -119,16 +119,16 @@
   </header>
 
   <!-- ============ HERO ============ -->
-  <section id="home" style="position:relative;padding:clamp(60px,8vw,100px) 25px clamp(50px,6vw,90px);overflow:hidden;background:{{ heroSectionBg }};">
+  <section id="home" style="position:relative;padding:clamp(15px,4vw,100px) var(--bb-margin) clamp(12px,3vw,90px);overflow:hidden;background:{{ heroSectionBg }};">
 
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
       <div class="r-hero2" style="display:grid;grid-template-columns:1.1fr 1fr;gap:var(--bb-gutter);align-items:center;">
         <div>
           <span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:7px 16px;background:#006EE6;border-radius:6px;margin-bottom:var(--bb-badge-mb);">#SomosBrain</span>
-          <h1 style="font-size:clamp(2.4rem,4.6vw,3.8rem);font-weight:800;line-height:1.12;letter-spacing:-0.02em;margin:0 0 16px;color:#0A1628;">
+          <h1 style="font-size:clamp(2.4rem,4.6vw,3.8rem);font-weight:800;line-height:1.12;letter-spacing:-0.02em;margin:0 0 var(--bb-gutter);color:#0A1628;">
             Instituto de Ciência e Tecnologia que une ideias disruptivas a <span style="display:inline-block;background:#41FF28;color:#0A1628;padding:2px 10px;border-radius:4px;">ações</span>.
           </h1>
-          <p style="font-size:1.1rem;line-height:1.8;color:#3A4A6B;max-width:520px;margin:0 0 36px;">
+          <p style="font-size:1.1rem;line-height:1.8;color:#3A4A6B;max-width:520px;margin:0 0 var(--bb-title-mb);">
             O Brain nasceu da Algar Telecom para conectar o Brasil à inovação. Unimos pesquisa aplicada, ecossistema de startups e tecnologia de ponta para gerar impacto real na economia.
           </p>
           <div style="display:flex;gap:var(--bb-gutter);flex-wrap:wrap;">
@@ -158,9 +158,9 @@
     <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(3,22,50,0.86) 0%,rgba(3,48,30,0.82) 100%);z-index:1;"></div>
     <div class="r-hero2" style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr;gap:var(--bb-gutter);align-items:center;position:relative;z-index:2;">
       <div>
-        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 16px;">De onde nascemos</p>
-        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 16px;letter-spacing:-0.01em;color:#FFFFFF;">Um propósito que vem de dentro</h2>
-        <p style="font-size:1.05rem;line-height:1.85;color:rgba(255,255,255,0.82);margin:0 0 18px;">
+        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 var(--bb-gutter);">De onde nascemos</p>
+        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 var(--bb-gutter);letter-spacing:-0.01em;color:#FFFFFF;">Um propósito que vem de dentro</h2>
+        <p style="font-size:1.05rem;line-height:1.85;color:rgba(255,255,255,0.82);margin:0 0 var(--bb-gutter);">
           O Brain foi criado pela Algar Telecom em 2018 como Instituto de Ciência e Tecnologia. Há mais de 30 anos conectamos pessoas e transformamos realidades por meio da tecnologia.
         </p>
         <p style="font-size:1.05rem;line-height:1.85;color:rgba(255,255,255,0.82);margin:0;">
@@ -191,18 +191,18 @@
     <div style="{{ pillarOrb2 }}"></div>
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
       <div style="text-align:center;max-width:640px;margin:0 auto 56px;">
-        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 16px;">Como funciona</p>
-        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 12px;color:#0A1628;">Nosso Ecossistema</h2>
+        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 var(--bb-gutter);">Como funciona</p>
+        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 var(--bb-gutter);color:#0A1628;">Nosso Ecossistema</h2>
         <p style="font-size:1.05rem;color:#3A4A6B;margin:0;">Três pilares que formam o motor de inovação do Brain</p>
       </div>
       <div class="r-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--bb-gutter);">
         <sc-for list="{{ pillars }}" as="pillar" hint-placeholder-count="3">
-          <div style="position:relative;padding:var(--bb-card-pad) 25px;{{ cardWrapBase }}overflow:hidden;transition:transform 0.35s ease;" style-hover="transform:translateY(-6px);" style-before="{{ cardBefore }}">
-            <div style="font-size:0.85rem;font-weight:700;color:#006EE6;letter-spacing:0.05em;margin-bottom:16px;opacity:0.6;">{{ pillar.number }}</div>
-            <div style="width:140px;height:140px;margin-bottom:16px;">
+          <div style="position:relative;padding:var(--bb-card-pad) var(--bb-margin);{{ cardWrapBase }}overflow:hidden;transition:transform 0.35s ease;" style-hover="transform:translateY(-6px);" style-before="{{ cardBefore }}">
+            <div style="font-size:0.85rem;font-weight:700;color:#006EE6;letter-spacing:0.05em;margin-bottom:var(--bb-badge-mb);opacity:0.6;">{{ pillar.number }}</div>
+            <div style="width:140px;height:140px;margin-bottom:var(--bb-badge-mb);">
               <img src="{{ pillar.icon }}" alt="" style="width:100%;height:100%;object-fit:contain;animation:floatY {{ pillar.duration }}s ease-in-out infinite, glowBreathe 4s ease-in-out infinite, rotate3d {{ pillar.duration }}s ease-in-out infinite;" />
             </div>
-            <h3 style="font-size:1.3rem;font-weight:600;margin:0 0 12px;color:#0A1628;">{{ pillar.title }}</h3>
+            <h3 style="font-size:1.3rem;font-weight:600;margin:0 0 var(--bb-gutter);color:#0A1628;">{{ pillar.title }}</h3>
             <p style="font-size:0.95rem;line-height:1.7;color:#3A4A6B;margin:0;">{{ pillar.desc }}</p>
           </div>
         </sc-for>
@@ -220,8 +220,8 @@
   <section class="idx-section-fix" style="position:relative;padding:var(--bb-section) var(--bb-margin);background:#FFFFFF;overflow:hidden;">
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
       <div style="text-align:center;max-width:640px;margin:0 auto 56px;">
-        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:6px 14px;background:#006EE6;border-radius:6px;margin:0 0 16px;">Onde atuamos</p>
-        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 12px;color:#0A1628;">Verticais de Negócio</h2>
+        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:6px 14px;background:#006EE6;border-radius:6px;margin:0 0 var(--bb-gutter);">Onde atuamos</p>
+        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 var(--bb-gutter);color:#0A1628;">Verticais de Negócio</h2>
         <p style="font-size:1.05rem;color:#3A4A6B;margin:0;">Soluções adaptadas para os principais setores da economia brasileira</p>
       </div>
       <div class="r-hero2" style="display:grid;grid-template-columns:1fr 1fr;gap:var(--bb-gutter);align-items:stretch;">
@@ -254,7 +254,7 @@
   </div>
 
   <!-- ============ MANIFESTO ============ -->
-  <section style="position:relative;padding:clamp(60px,8vw,100px) 25px;overflow:hidden;">
+  <section style="position:relative;padding:clamp(15px,4vw,100px) var(--bb-margin);overflow:hidden;">
     <img src="uploads/comp_photo_9663.jpg" alt="" style="position:absolute;top:-20px;left:-20px;width:calc(100% + 40px);height:calc(100% + 40px);object-fit:cover;filter:blur(20px) saturate(115%);transform:scale(1.02);z-index:0;" />
     <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(3,22,50,0.88) 0%,rgba(3,48,30,0.84) 100%);z-index:1;"></div>
     <div class="r-hero2" style="max-width:1240px;margin:0 auto;position:relative;z-index:2;display:grid;grid-template-columns:1.2fr 1fr;gap:var(--bb-gutter);align-items:center;">
@@ -264,7 +264,7 @@
         <blockquote style="font-size:clamp(1.3rem,2.6vw,1.75rem);font-weight:400;line-height:1.7;color:rgba(255,255,255,0.88);margin:0 0 var(--bb-title-mb);">
           Somos um <strong style="font-weight:700;color:#FFFFFF;">Instituto de Ciência e Tecnologia</strong> que une ideias disruptivas a ações. Somos apaixonados por criatividade, inovação e tecnologia — ajudamos os negócios a <strong style="font-weight:700;color:#FFFFFF;">evoluírem digitalmente.</strong>
         </blockquote>
-        <p style="font-size:0.85rem;font-weight:600;color:rgba(255,255,255,0.7);letter-spacing:0.05em;margin:0 0 36px;text-transform:uppercase;">— Brain Inovação</p>
+        <p style="font-size:0.85rem;font-weight:600;color:rgba(255,255,255,0.7);letter-spacing:0.05em;margin:0 0 var(--bb-title-mb);text-transform:uppercase;">— Brain Inovação</p>
         <a href="solucoes.html" style="display:inline-block;padding:15px 32px;border-radius:8px;font-weight:700;font-size:14px;background:linear-gradient(135deg,#006EE6 0%,#41FF28 100%);background-size:160% 100%;background-position:0% 0%;color:#FFFFFF;transition:background-position 0.4s ease, transform 0.2s ease;" style-hover="background-position:100% 0%;transform:translateY(-2px);">Conheça nossas soluções</a>
       </div>
       <sc-if value="{{ showBrainSymbol }}" hint-placeholder-val="{{ true }}">
@@ -294,8 +294,8 @@
         </div>
       </div>
       <div>
-        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:6px 14px;background:#006EE6;border-radius:6px;margin:0 0 16px;">Quem somos</p>
-        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 16px;color:#0A1628;">Mentes conectadas, inquietas</h2>
+        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:6px 14px;background:#006EE6;border-radius:6px;margin:0 0 var(--bb-gutter);">Quem somos</p>
+        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 var(--bb-gutter);color:#0A1628;">Mentes conectadas, inquietas</h2>
         <p style="font-size:1.05rem;line-height:1.85;color:#3A4A6B;margin:0 0 48px;">
           Somos Brainers. Trabalhamos em squads multidisciplinares que unem tecnologia, negócios e design para transformar ideias em ações concretas.
         </p>
@@ -321,12 +321,12 @@
   <section id="contato" class="idx-section-fix" style="position:relative;padding:var(--bb-section) var(--bb-margin);background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);">
     <div style="max-width:1240px;margin:0 auto;">
       <div style="text-align:center;max-width:680px;margin:0 auto 48px;">
-        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:6px 14px;background:#006EE6;border-radius:6px;margin:0 0 16px;">Fale Conosco</p>
-        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 12px;color:#0A1628;">Conte-nos sobre o seu desafio</h2>
+        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:6px 14px;background:#006EE6;border-radius:6px;margin:0 0 var(--bb-gutter);">Fale Conosco</p>
+        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 var(--bb-gutter);color:#0A1628;">Conte-nos sobre o seu desafio</h2>
         <p style="font-size:1.05rem;color:#3A4A6B;margin:0;">Preencha o formulário e nossa equipe entrará em contato em até 24 horas.</p>
       </div>
-      <form style="position:relative;max-width:720px;margin:0 auto;{{ cardWrapBase }}padding:clamp(20px,4vw,44px);border-radius:20px;">
-        <div class="r-form2" style="display:grid;grid-template-columns:1fr 1fr;gap:var(--bb-gutter);margin-bottom:16px;">
+      <form style="position:relative;max-width:720px;margin:0 auto;{{ cardWrapBase }}padding:clamp(15px,3vw,44px);border-radius:20px;">
+        <div class="r-form2" style="display:grid;grid-template-columns:1fr 1fr;gap:var(--bb-gutter);margin-bottom:var(--bb-badge-mb);">
           <div>
             <label style="display:block;font-size:0.85rem;font-weight:600;color:#0A1628;margin-bottom:8px;">Nome completo</label>
             <input type="text" placeholder="Seu nome" style="width:100%;padding:14px 18px;border:1px solid rgba(0,0,0,0.1);border-radius:10px;font-size:0.95rem;font-family:inherit;color:#0A1628;background:#F5F7FA;">
@@ -336,7 +336,7 @@
             <input type="email" placeholder="seu@email.com" style="width:100%;padding:14px 18px;border:1px solid rgba(0,0,0,0.1);border-radius:10px;font-size:0.95rem;font-family:inherit;color:#0A1628;background:#F5F7FA;">
           </div>
         </div>
-        <div style="margin-bottom:16px;">
+        <div style="margin-bottom:var(--bb-badge-mb);">
           <label style="display:block;font-size:0.85rem;font-weight:600;color:#0A1628;margin-bottom:8px;">Qual é o seu maior desafio de inovação?</label>
           <textarea rows="4" placeholder="Descreva brevemente o desafio que sua empresa enfrenta..." style="width:100%;padding:14px 18px;border:1px solid rgba(0,0,0,0.1);border-radius:10px;font-size:0.95rem;font-family:inherit;color:#0A1628;background:#F5F7FA;resize:vertical;"></textarea>
         </div>
@@ -356,7 +356,7 @@
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
       <div class="r-footer" style="display:grid;grid-template-columns:1.3fr 1fr 1fr auto;gap:var(--bb-gutter);margin-bottom:var(--bb-gutter);align-items:start;">
         <div>
-          <img src="assets/brain-logo-fullcolor.png" alt="Brain" style="height:32px;width:auto;margin-bottom:16px;" />
+          <img src="assets/brain-logo-fullcolor.png" alt="Brain" style="height:32px;width:auto;margin-bottom:var(--bb-badge-mb);" />
           <p style="font-size:0.85rem;color:#6B7A9A;line-height:1.7;margin:0;max-width:260px;">Instituto de Ciência e Tecnologia. Inovando com propósito desde a fundação pela Algar Telecom.</p>
         </div>
         <div style="display:flex;flex-direction:column;gap:var(--bb-inner-gap);">
