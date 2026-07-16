@@ -30,9 +30,11 @@
       .r-footer { grid-template-columns: 1fr 1fr !important; }
     }
     @media (max-width:700px) {
-      .r-header-inner { flex-wrap: wrap; gap: 12px; padding: 14px 16px !important; }
-      .r-nav { flex-wrap: wrap; gap: 6px; width: 100%; justify-content: flex-start; }
-      .r-nav a { padding: 8px 14px !important; font-size: 13px !important; }
+      .r-header-inner { flex-wrap: wrap; gap: 10px; padding: 12px 16px !important; }
+      .r-header-inner > a { margin-right: 0; }
+      .r-nav { flex-wrap: wrap; gap: 4px; width: 100%; justify-content: flex-start; }
+      .r-nav a:not([style-hover]) { padding: 6px 10px !important; font-size: 12px !important; }
+      .r-nav a[style-hover] { padding: 8px 16px !important; font-size: 12px !important; margin-left: 0 !important; margin-top: 4px; }
       .r-grid3, .r-grid4, .r-grid5, .r-form2 { grid-template-columns: 1fr !important; }
       .r-footer { grid-template-columns: 1fr !important; }
       .r-blogfeatured > a { grid-column: span 1 !important; grid-row: span 1 !important; }
@@ -52,16 +54,28 @@
     /* ===== solucoes.html: correcoes especificas ===== */
     @media (max-width:700px) {
       .sol-section-fix {
-        padding-top: 48px !important;
-        padding-bottom: 48px !important;
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+      }
+      .sol-hero-section {
+        padding-bottom: 32px !important;
+      }
+      .sol-divider {
+        display: none !important;
       }
       .sol-cases-numero { font-size: 2.4rem !important; }
       .sol-iot-icon { max-width: 240px !important; width: 240px !important; }
     }
     @media (max-width:480px) {
       .sol-section-fix {
-        padding-top: 36px !important;
-        padding-bottom: 36px !important;
+        padding-top: 24px !important;
+        padding-bottom: 24px !important;
+      }
+      .sol-hero-section {
+        padding-bottom: 20px !important;
+      }
+      .sol-hero-logo-row {
+        padding: 12px 0 24px !important;
       }
     }
   </style>
@@ -93,10 +107,10 @@
   </header>
 
   <!-- ============ HERO ============ -->
-  <section class="sol-section-fix" style="position:relative;padding:64px 25px 48px;overflow:hidden;background:radial-gradient(circle at 15% 20%, rgba(0,110,230,0.06) 0%, transparent 45%), radial-gradient(circle at 85% 80%, rgba(65,255,40,0.05) 0%, transparent 45%);">
+  <section class="sol-section-fix sol-hero-section" style="position:relative;padding:64px 25px 48px;overflow:hidden;background:radial-gradient(circle at 15% 20%, rgba(0,110,230,0.06) 0%, transparent 45%), radial-gradient(circle at 85% 80%, rgba(65,255,40,0.05) 0%, transparent 45%);">
 
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
-      <div style="display:flex;align-items:center;justify-content:center;gap:24px;padding:20px 0 40px;">
+      <div class="sol-hero-logo-row" style="display:flex;align-items:center;justify-content:center;gap:24px;padding:20px 0 40px;">
         <img src="assets/brain-logo-fullcolor.png" alt="" style="height:32px;">
         <div style="width:3px;height:34px;background:linear-gradient(135deg,#006EE6,#41FF28);border-radius:2px;"></div>
         <span style="font-size:clamp(1.2rem,3vw,2rem);font-weight:500;letter-spacing:0.02em;color:#0A1628;">Soluções</span>
@@ -122,7 +136,7 @@
     </div>
   </section>
 
-  <div style="position:relative;height:1px;z-index:5;">
+  <div class="sol-divider" style="position:relative;height:1px;z-index:5;">
     <div style="position:absolute;left:0;right:0;top:-20px;height:40px;display:flex;align-items:center;">
       <div style="width:100%;height:1.5px;background:linear-gradient(90deg,rgba(0,110,230,0.35),rgba(65,255,40,0.5),rgba(0,110,230,0.35));"></div>
     </div>
@@ -159,7 +173,7 @@
     </div>
   </section>
 
-  <div style="position:relative;height:1px;z-index:5;">
+  <div class="sol-divider" style="position:relative;height:1px;z-index:5;">
     <div style="position:absolute;left:0;right:0;top:-20px;height:40px;display:flex;align-items:center;">
       <div style="width:100%;height:1.5px;background:linear-gradient(90deg,rgba(65,255,40,0.35),rgba(255,195,0,0.5),rgba(65,255,40,0.35));"></div>
     </div>
@@ -189,7 +203,7 @@
     </div>
   </section>
 
-  <div style="position:relative;height:1px;z-index:5;">
+  <div class="sol-divider" style="position:relative;height:1px;z-index:5;">
     <div style="position:absolute;left:0;right:0;top:-20px;height:40px;display:flex;align-items:center;">
       <div style="width:100%;height:1.5px;background:linear-gradient(90deg,rgba(0,110,230,0.35),rgba(65,255,40,0.5),rgba(0,110,230,0.35));"></div>
     </div>
@@ -216,7 +230,7 @@
     </div>
   </section>
 
-  <div style="position:relative;height:1px;z-index:5;">
+  <div class="sol-divider" style="position:relative;height:1px;z-index:5;">
     <div style="position:absolute;left:0;right:0;top:-20px;height:40px;display:flex;align-items:center;">
       <div style="width:100%;height:1.5px;background:linear-gradient(90deg,rgba(65,255,40,0.35),rgba(255,195,0,0.5),rgba(65,255,40,0.35));"></div>
     </div>
@@ -251,7 +265,7 @@
     </div>
   </section>
 
-  <div style="position:relative;height:1px;z-index:5;">
+  <div class="sol-divider" style="position:relative;height:1px;z-index:5;">
     <div style="position:absolute;left:0;right:0;top:-20px;height:40px;display:flex;align-items:center;">
       <div style="width:100%;height:1.5px;background:linear-gradient(90deg,rgba(0,110,230,0.35),rgba(65,255,40,0.5),rgba(0,110,230,0.35));"></div>
     </div>
@@ -285,7 +299,7 @@
     </div>
   </section>
 
-  <div style="position:relative;height:1px;z-index:5;">
+  <div class="sol-divider" style="position:relative;height:1px;z-index:5;">
     <div style="position:absolute;left:0;right:0;top:-20px;height:40px;display:flex;align-items:center;">
       <div style="width:100%;height:1.5px;background:linear-gradient(90deg,rgba(65,255,40,0.35),rgba(255,195,0,0.5),rgba(65,255,40,0.35));"></div>
     </div>
