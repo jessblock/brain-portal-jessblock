@@ -89,7 +89,7 @@
         <a href="solucoes.html" style="padding:10px 18px;border-radius:100px;font-size:14px;font-weight:500;color:#3A4A6B;">Soluções</a>
         <a href="blog.html" style="padding:10px 18px;border-radius:100px;font-size:14px;font-weight:500;color:#0A1628;background:#F5F7FA;">Blog</a>
         <a href="carreiras.html" style="padding:10px 18px;border-radius:100px;font-size:14px;font-weight:500;color:#3A4A6B;">Carreiras</a>
-        <a href="#contato" style="margin-left:8px;padding:11px 24px;border-radius:8px;font-size:14px;font-weight:700;color:#FFFFFF;background:linear-gradient(135deg,#006EE6 0%,#41FF28 100%);background-size:160% 100%;background-position:0% 0%;transition:background-position 0.4s ease;" style-hover="background-position:100% 0%;">Fale Conosco</a>
+        <a href="#contato" style="margin-left:var(--bb-inner-gap);padding:11px 24px;border-radius:8px;font-size:14px;font-weight:700;color:#FFFFFF;background:linear-gradient(135deg,#006EE6 0%,#41FF28 100%);background-size:160% 100%;background-position:0% 0%;transition:background-position 0.4s ease;" style-hover="background-position:100% 0%;">Fale Conosco</a>
       </nav>
     </div>
   </header>
@@ -97,7 +97,7 @@
   <!-- ============ HERO ============ -->
   <section style="position:relative;padding:clamp(15px,4vw,96px) var(--bb-margin) clamp(12px,3vw,70px);overflow:hidden;background:radial-gradient(circle at 15% 20%, rgba(0,110,230,0.06) 0%, transparent 45%), radial-gradient(circle at 85% 80%, rgba(65,255,40,0.05) 0%, transparent 45%);">
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
-      <span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:7px 16px;background:#006EE6;border-radius:6px;margin-bottom:var(--bb-badge-mb);">#brainblog</span>
+      <span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:6px 14px;background:#006EE6;border-radius:100px;margin-bottom:var(--bb-badge-mb);">#brainblog</span>
       <h1 style="font-size:clamp(2.2rem,4.2vw,3.4rem);font-weight:800;line-height:1.14;letter-spacing:-0.02em;margin:0 0 var(--bb-gutter);color:#0A1628;max-width:760px;">
         Artigos e conteúdo sobre <span style="display:inline-block;background:#41FF28;color:#0A1628;padding:2px 10px;border-radius:4px;">inovação</span> que fazem sentido para o seu negócio.
       </h1>
@@ -106,7 +106,7 @@
       </p>
       <div style="display:flex;gap:var(--bb-gutter);flex-wrap:wrap;">
         <sc-for list="{{ categories }}" as="cat" hint-placeholder-count="8">
-          <a href="{{ cat.url }}" target="_blank" rel="noopener" style="display:inline-block;font-size:12px;font-weight:700;letter-spacing:0.03em;color:{{ cat.color }};padding:7px 14px;background:{{ cat.bg }};border-radius:6px;">{{ cat.name }}</a>
+          <a href="{{ cat.url }}" target="_blank" rel="noopener" style="display:inline-block;font-size:12px;font-weight:700;letter-spacing:0.03em;color:{{ cat.color }};padding:6px 14px;background:{{ cat.bg }};border-radius:100px;">{{ cat.name }}</a>
         </sc-for>
       </div>
     </div>
@@ -121,13 +121,13 @@
   <!-- ============ GRID DE POSTS ============ -->
   <section class="blog-section-fix" style="position:relative;padding:var(--bb-section) var(--bb-margin);background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);overflow:hidden;">
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
-      <div style="text-align:center;max-width:640px;margin:0 auto 50px;">
-        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:6px 14px;background:#006EE6;border-radius:6px;margin:0 0 var(--bb-gutter);">Posts recentes</p>
+      <div style="text-align:center;max-width:640px;margin:0 auto var(--bb-title-mb);">
+        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:6px 14px;background:#006EE6;border-radius:100px;margin:0 0 var(--bb-gutter);">Posts recentes</p>
         <h2 style="font-size:clamp(1.7rem,2.8vw,2.3rem);font-weight:700;margin:0;color:#0A1628;">O que estamos publicando</h2>
       </div>
       <div class="r-grid3 r-blogfeatured" style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--bb-gutter);">
         <a href="https://inovacaobrain.com.br/blog/copa-do-mundo-2026-a-inovacao-que-vai-alem-da-tecnologia/" target="_blank" rel="noopener" style="grid-column:span 2;grid-row:span 2;display:block;{{ glassCard }}border-radius:16px;overflow:hidden;transition:transform 0.3s ease, box-shadow 0.3s ease;position:relative;" style-hover="{{ glassCardHover }}">
-          <div style="position:absolute;top:14px;left:14px;background:#0A1628;color:#FFFFFF;font-size:11px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;padding:6px 12px;border-radius:5px;z-index:2;">Destaque</div>
+          <div style="position:absolute;top:16px;left:16px;background:#0A1628;color:#FFFFFF;font-size:11px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;padding:6px 14px;border-radius:100px;z-index:2;">Destaque</div>
           <img src="uploads/comp_Blog_01_Copa2026.jpg" alt="Copa do Mundo 2026: a inovação que vai além da tecnologia" style="width:100%;height:100%;object-fit:cover;display:block;" />
         </a>
         <sc-for list="{{ posts }}" as="post" hint-placeholder-count="5">
@@ -137,7 +137,7 @@
         </sc-for>
       </div>
       <div style="text-align:center;margin-top:48px;">
-        <a href="https://inovacaobrain.com.br/blog/page/2/" target="_blank" rel="noopener" style="display:inline-block;padding:14px 30px;border-radius:8px;font-weight:700;font-size:14px;background:linear-gradient(135deg,#006EE6 0%,#41FF28 100%);background-size:160% 100%;background-position:0% 0%;color:#FFFFFF;transition:background-position 0.4s ease, transform 0.2s ease;" style-hover="background-position:100% 0%;transform:translateY(-2px);">Ver mais artigos</a>
+        <a href="https://inovacaobrain.com.br/blog/page/2/" target="_blank" rel="noopener" style="display:inline-block;padding:15px 32px;border-radius:8px;font-weight:700;font-size:14px;background:linear-gradient(135deg,#006EE6 0%,#41FF28 100%);background-size:160% 100%;background-position:0% 0%;color:#FFFFFF;transition:background-position 0.4s ease, transform 0.2s ease;" style-hover="background-position:100% 0%;transform:translateY(-2px);">Ver mais artigos</a>
       </div>
     </div>
   </section>
@@ -151,8 +151,8 @@
   <!-- ============ MAIS LIDOS ============ -->
   <section class="blog-section-fix" style="padding:var(--bb-section) var(--bb-margin);background:#FFFFFF;">
     <div style="max-width:1240px;margin:0 auto;">
-      <div style="text-align:center;max-width:640px;margin:0 auto 50px;">
-        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 var(--bb-gutter);">Mais lidos</p>
+      <div style="text-align:center;max-width:640px;margin:0 auto var(--bb-title-mb);">
+        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:100px;margin:0 0 var(--bb-gutter);">Mais lidos</p>
         <h2 style="font-size:clamp(1.7rem,2.8vw,2.3rem);font-weight:700;margin:0;color:#0A1628;">Clássicos que continuam relevantes</h2>
       </div>
       <div class="r-grid4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--bb-gutter);">
@@ -178,7 +178,7 @@
       <p style="font-size:1.05rem;color:#3A4A6B;margin:0 0 var(--bb-title-mb);">Sem spam. Só artigos que ajudam você a decidir melhor.</p>
       <form style="display:flex;gap:var(--bb-inner-gap);max-width:460px;margin:0 auto;flex-wrap:wrap;justify-content:center;">
         <input type="email" placeholder="seu@email.com" style="flex:1;min-width:220px;padding:14px 18px;border:1px solid rgba(0,0,0,0.1);border-radius:8px;font-size:0.95rem;font-family:inherit;color:#0A1628;background:#FFFFFF;" />
-        <button type="submit" style="padding:14px 28px;border:none;border-radius:8px;font-weight:700;font-size:14px;background:linear-gradient(135deg,#006EE6 0%,#41FF28 100%);background-size:160% 100%;background-position:0% 0%;color:#FFFFFF;cursor:pointer;transition:background-position 0.4s ease, transform 0.15s ease;" style-hover="background-position:100% 0%;" style-active="transform:scale(0.98);">Inscrever-se</button>
+        <button type="submit" style="padding:15px 32px;border:none;border-radius:8px;font-weight:700;font-size:14px;background:linear-gradient(135deg,#006EE6 0%,#41FF28 100%);background-size:160% 100%;background-position:0% 0%;color:#FFFFFF;cursor:pointer;transition:background-position 0.4s ease, transform 0.15s ease;" style-hover="background-position:100% 0%;" style-active="transform:scale(0.98);">Inscrever-se</button>
       </form>
     </div>
   </section>
