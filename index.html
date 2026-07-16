@@ -13,6 +13,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Exo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
+    /* ===== TOKENS DE ESPACAMENTO (Brandbook Brain - Grid 25px) ===== */
+    :root {
+      /* Brandbook: margem 25px, gutter 25px */
+      --bb-margin: 25px;
+      --bb-gutter: 25px;
+      --bb-section: 64px;
+      --bb-title-mb: 48px;
+      --bb-card-pad: 40px;
+      --bb-badge-mb: 16px;
+      --bb-inner-gap: 25px;
+    }
     * { box-sizing: border-box; }
     body { margin: 0; font-family: 'Exo', 'Segoe UI', sans-serif; background: #FFFFFF; }
     a { color: inherit; text-decoration: none; }
@@ -31,16 +42,17 @@
       .r-footer { grid-template-columns: 1fr 1fr !important; }
     }
     @media (max-width:700px) {
-      .r-header-inner { flex-wrap: wrap; gap: 12px; padding: 14px 16px !important; }
-      .r-nav { flex-wrap: wrap; gap: 6px; width: 100%; justify-content: flex-start; }
-      .r-nav a { padding: 8px 14px !important; font-size: 13px !important; }
+      .r-header-inner { flex-wrap: wrap; gap: var(--bb-gutter); padding: 16px var(--bb-margin) !important; }
+      .r-nav { flex-wrap: wrap; gap: 8px; width: 100%; justify-content: flex-start; }
+      .r-nav a:not([style-hover]) { padding: 8px 12px !important; font-size: 13px !important; }
+      .r-nav a[style-hover] { padding: 10px 18px !important; font-size: 13px !important; margin-left: 0 !important; margin-top: 6px; }
       .r-grid3, .r-grid4, .r-grid5, .r-form2 { grid-template-columns: 1fr !important; }
       .r-footer { grid-template-columns: 1fr !important; }
       .r-blogfeatured > a { grid-column: span 1 !important; grid-row: span 1 !important; }
       .mobile-stack { display: flex !important; flex-direction: column !important; }
       .mobile-hide-img { display: none !important; }
       .mobile-center { text-align: center !important; }
-      .mobile-gap-sm { gap: 16px !important; }
+      .mobile-gap-sm { gap: var(--bb-gutter) !important; }
     }
     @media (max-width:560px) {
       section { padding-left: 16px !important; padding-right: 16px !important; }
@@ -50,57 +62,34 @@
       h1 { font-size: 1.8rem !important; }
       h2 { font-size: 1.5rem !important; }
     }
-    /* ===== index.html: correções específicas ===== */
+    /* ===== index.html: correções específicas (tokens brandbook) ===== */
     @media (max-width:700px) {
       .idx-nasce-card {
-        padding: 36px 20px !important;
+        padding: var(--bb-card-pad) 20px !important;
         overflow: hidden !important;
       }
       .idx-nasce-numero { font-size: 3.6rem !important; }
       .idx-nasce-icon { display: none !important; }
       .idx-quote-mark { font-size: 2.8rem !important; line-height: 0.6 !important; }
       .idx-squads-badge { display: none !important; }
-      .idx-divider {
-        display: none !important;
-      }
-      .idx-section-fix {
-        padding-top: 36px !important;
-        padding-bottom: 36px !important;
-      }
+      .idx-divider { display: none !important; }
+      .idx-section-fix { padding-top: 48px !important; padding-bottom: 48px !important; }
     }
     @media (max-width:480px) {
-      .idx-section-fix {
-        padding-top: 24px !important;
-        padding-bottom: 24px !important;
-      }
+      .idx-section-fix { padding-top: 36px !important; padding-bottom: 36px !important; }
     }
     /* ===== Voltar ao topo ===== */
     .btn-top {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
+      position: fixed; bottom: var(--bb-margin); right: var(--bb-margin);
+      width: 48px; height: 48px; border-radius: 50%;
       background: linear-gradient(135deg, #006EE6 0%, #41FF28 100%);
-      color: #FFFFFF;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      opacity: 0;
-      visibility: hidden;
+      color: #FFFFFF; display: flex; align-items: center; justify-content: center;
+      z-index: 9999; opacity: 0; visibility: hidden;
       transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease;
-      box-shadow: 0 6px 20px -4px rgba(0,110,230,0.35);
-      cursor: pointer;
+      box-shadow: 0 6px 20px -4px rgba(0,110,230,0.35); cursor: pointer;
     }
-    .btn-top.visible {
-      opacity: 1;
-      visibility: visible;
-    }
-    .btn-top:hover {
-      transform: translateY(-2px);
-    }
+    .btn-top.visible { opacity: 1; visibility: visible; }
+    .btn-top:hover { transform: translateY(-2px); }
   </style>
 </helmet>
 
@@ -117,7 +106,7 @@
 
   <!-- ============ HEADER ============ -->
   <header style="position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.06);">
-    <div class="r-header-inner" style="max-width:1240px;margin:0 auto;padding:16px 25px;display:flex;justify-content:space-between;align-items:center;">
+    <div class="r-header-inner" style="max-width:1240px;margin:0 auto;padding:16px var(--bb-margin);display:flex;justify-content:space-between;align-items:center;">
       <img src="assets/brain-logo-fullcolor.png" alt="Brain" style="height:32px;width:auto;" />
       <nav class="r-nav" style="display:flex;align-items:center;gap:4px;">
         <a href="index.html" style="padding:10px 18px;border-radius:100px;font-size:14px;font-weight:500;color:#0A1628;background:#F5F7FA;">Home</a>
@@ -133,16 +122,16 @@
   <section id="home" style="position:relative;padding:clamp(60px,8vw,100px) 25px clamp(50px,6vw,90px);overflow:hidden;background:{{ heroSectionBg }};">
 
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
-      <div class="r-hero2" style="display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center;">
+      <div class="r-hero2" style="display:grid;grid-template-columns:1.1fr 1fr;gap:var(--bb-gutter);align-items:center;">
         <div>
-          <span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:7px 16px;background:#006EE6;border-radius:6px;margin-bottom:24px;">#SomosBrain</span>
-          <h1 style="font-size:clamp(2.4rem,4.6vw,3.8rem);font-weight:800;line-height:1.12;letter-spacing:-0.02em;margin:0 0 20px;color:#0A1628;">
+          <span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:7px 16px;background:#006EE6;border-radius:6px;margin-bottom:var(--bb-badge-mb);">#SomosBrain</span>
+          <h1 style="font-size:clamp(2.4rem,4.6vw,3.8rem);font-weight:800;line-height:1.12;letter-spacing:-0.02em;margin:0 0 16px;color:#0A1628;">
             Instituto de Ciência e Tecnologia que une ideias disruptivas a <span style="display:inline-block;background:#41FF28;color:#0A1628;padding:2px 10px;border-radius:4px;">ações</span>.
           </h1>
           <p style="font-size:1.1rem;line-height:1.8;color:#3A4A6B;max-width:520px;margin:0 0 36px;">
             O Brain nasceu da Algar Telecom para conectar o Brasil à inovação. Unimos pesquisa aplicada, ecossistema de startups e tecnologia de ponta para gerar impacto real na economia.
           </p>
-          <div style="display:flex;gap:16px;flex-wrap:wrap;">
+          <div style="display:flex;gap:var(--bb-gutter);flex-wrap:wrap;">
             <a href="solucoes.html" style="display:inline-block;padding:15px 32px;border-radius:8px;font-weight:700;font-size:14px;background:linear-gradient(135deg,#006EE6 0%,#41FF28 100%);background-size:160% 100%;background-position:0% 0%;color:#FFFFFF;transition:background-position 0.4s ease, transform 0.2s ease;" style-hover="background-position:100% 0%;transform:translateY(-2px);">Conheça nossas soluções</a>
             <a href="carreiras.html" style="display:inline-block;padding:15px 32px;border-radius:8px;font-weight:700;font-size:14px;border:2px solid rgba(0,0,0,0.12);color:#0A1628;transition:border-color 0.25s ease, transform 0.2s ease, color 0.25s ease;" style-hover="border-color:#006EE6;color:#006EE6;transform:translateY(-2px);">#VemSerBrainer</a>
           </div>
@@ -164,13 +153,13 @@
   </div>
 
   <!-- ============ DE ONDE NASCEMOS ============ -->
-  <section class="idx-section-fix" style="position:relative;padding:64px 25px;overflow:hidden;">
+  <section class="idx-section-fix" style="position:relative;padding:var(--bb-section) var(--bb-margin);overflow:hidden;">
     <img src="uploads/comp_photo_9658.jpg" alt="" style="position:absolute;top:-20px;left:-20px;width:calc(100% + 40px);height:calc(100% + 40px);object-fit:cover;filter:blur(20px) saturate(115%);transform:scale(1.02);z-index:0;" />
     <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(3,22,50,0.86) 0%,rgba(3,48,30,0.82) 100%);z-index:1;"></div>
-    <div class="r-hero2" style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr;gap:80px;align-items:center;position:relative;z-index:2;">
+    <div class="r-hero2" style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr;gap:var(--bb-gutter);align-items:center;position:relative;z-index:2;">
       <div>
         <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 16px;">De onde nascemos</p>
-        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 20px;letter-spacing:-0.01em;color:#FFFFFF;">Um propósito que vem de dentro</h2>
+        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 16px;letter-spacing:-0.01em;color:#FFFFFF;">Um propósito que vem de dentro</h2>
         <p style="font-size:1.05rem;line-height:1.85;color:rgba(255,255,255,0.82);margin:0 0 18px;">
           O Brain foi criado pela Algar Telecom em 2018 como Instituto de Ciência e Tecnologia. Há mais de 30 anos conectamos pessoas e transformamos realidades por meio da tecnologia.
         </p>
@@ -178,7 +167,7 @@
           Não somos uma consultoria tradicional. Somos um ecossistema que une pensamento estratégico, capacitação e laboratório de prototipagem.
         </p>
       </div>
-      <div class="idx-nasce-card" style="position:relative;text-align:center;padding:72px 40px;background:linear-gradient(135deg,rgba(255,255,255,0.24) 0%,rgba(255,255,255,0.12) 100%);backdrop-filter:blur(28px) saturate(180%);-webkit-backdrop-filter:blur(28px) saturate(180%);border:1px solid rgba(255,255,255,0.4);border-radius:28px;overflow:visible;box-shadow:0 30px 60px -16px rgba(0,10,20,0.3), inset 0 1px 0 rgba(255,255,255,0.35);">
+      <div class="idx-nasce-card" style="position:relative;text-align:center;padding:var(--bb-card-pad);background:linear-gradient(135deg,rgba(255,255,255,0.24) 0%,rgba(255,255,255,0.12) 100%);backdrop-filter:blur(28px) saturate(180%);-webkit-backdrop-filter:blur(28px) saturate(180%);border:1px solid rgba(255,255,255,0.4);border-radius:28px;overflow:visible;box-shadow:0 30px 60px -16px rgba(0,10,20,0.3), inset 0 1px 0 rgba(255,255,255,0.35);">
         <div style="content:'';position:absolute;top:0;left:0;right:0;height:55%;border-radius:28px 28px 90px 90px;background:linear-gradient(180deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0) 100%);pointer-events:none;"></div>
         <img src="assets/comp_icon-rocket-3d.png" alt="" class="idx-nasce-icon mobile-hide-img" style="position:absolute;top:-58px;right:-26px;width:150px;height:150px;object-fit:contain;animation:floatY 4.5s ease-in-out infinite, glowBreathe 4s ease-in-out infinite;" />
         <div style="position:relative;z-index:2;">
@@ -197,7 +186,7 @@
   </div>
 
   <!-- ============ PILARES ============ -->
-  <section class="idx-section-fix" style="position:relative;padding:64px 25px;background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);overflow:hidden;">
+  <section class="idx-section-fix" style="position:relative;padding:var(--bb-section) var(--bb-margin);background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);overflow:hidden;">
     <div style="{{ pillarOrb1 }}"></div>
     <div style="{{ pillarOrb2 }}"></div>
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
@@ -206,11 +195,11 @@
         <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 12px;color:#0A1628;">Nosso Ecossistema</h2>
         <p style="font-size:1.05rem;color:#3A4A6B;margin:0;">Três pilares que formam o motor de inovação do Brain</p>
       </div>
-      <div class="r-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:25px;">
+      <div class="r-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--bb-gutter);">
         <sc-for list="{{ pillars }}" as="pillar" hint-placeholder-count="3">
-          <div style="position:relative;padding:44px 30px;{{ cardWrapBase }}overflow:hidden;transition:transform 0.35s ease;" style-hover="transform:translateY(-6px);" style-before="{{ cardBefore }}">
-            <div style="font-size:0.85rem;font-weight:700;color:#006EE6;letter-spacing:0.05em;margin-bottom:20px;opacity:0.6;">{{ pillar.number }}</div>
-            <div style="width:140px;height:140px;margin-bottom:20px;">
+          <div style="position:relative;padding:var(--bb-card-pad) 25px;{{ cardWrapBase }}overflow:hidden;transition:transform 0.35s ease;" style-hover="transform:translateY(-6px);" style-before="{{ cardBefore }}">
+            <div style="font-size:0.85rem;font-weight:700;color:#006EE6;letter-spacing:0.05em;margin-bottom:16px;opacity:0.6;">{{ pillar.number }}</div>
+            <div style="width:140px;height:140px;margin-bottom:16px;">
               <img src="{{ pillar.icon }}" alt="" style="width:100%;height:100%;object-fit:contain;animation:floatY {{ pillar.duration }}s ease-in-out infinite, glowBreathe 4s ease-in-out infinite, rotate3d {{ pillar.duration }}s ease-in-out infinite;" />
             </div>
             <h3 style="font-size:1.3rem;font-weight:600;margin:0 0 12px;color:#0A1628;">{{ pillar.title }}</h3>
@@ -228,22 +217,22 @@
   </div>
 
   <!-- ============ VERTICAIS ============ -->
-  <section class="idx-section-fix" style="position:relative;padding:64px 25px;background:#FFFFFF;overflow:hidden;">
+  <section class="idx-section-fix" style="position:relative;padding:var(--bb-section) var(--bb-margin);background:#FFFFFF;overflow:hidden;">
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
       <div style="text-align:center;max-width:640px;margin:0 auto 56px;">
         <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:6px 14px;background:#006EE6;border-radius:6px;margin:0 0 16px;">Onde atuamos</p>
         <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 12px;color:#0A1628;">Verticais de Negócio</h2>
         <p style="font-size:1.05rem;color:#3A4A6B;margin:0;">Soluções adaptadas para os principais setores da economia brasileira</p>
       </div>
-      <div class="r-hero2" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:stretch;">
+      <div class="r-hero2" style="display:grid;grid-template-columns:1fr 1fr;gap:var(--bb-gutter);align-items:stretch;">
         <div style="position:relative;">
           <div style="position:relative;border-radius:20px;overflow:hidden;height:100%;min-height:100%;">
             <img src="uploads/comp_photo_1422.jpg" alt="Time Brain mapeando as verticais de negócio em quadro colaborativo" class="mobile-hide-img" style="width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:1;" />
           </div>
         </div>
-        <div style="display:flex;flex-direction:column;gap:16px;justify-content:center;">
+        <div style="display:flex;flex-direction:column;gap:var(--bb-gutter);justify-content:center;">
           <sc-for list="{{ verticals }}" as="v" hint-placeholder-count="5">
-            <div style="position:relative;display:flex;align-items:center;gap:20px;padding:18px 24px;background:rgba(255,255,255,0.5);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.7);border-radius:14px;transition:transform 0.3s ease;" style-hover="transform:translateX(6px);" style-before="content:'';position:absolute;top:6px;right:0;bottom:6px;width:4px;border-radius:0 8px 8px 0;background:linear-gradient(180deg,#006EE6,#41FF28);opacity:0.5;">
+            <div style="position:relative;display:flex;align-items:center;gap:var(--bb-gutter);padding:18px 24px;background:rgba(255,255,255,0.5);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.7);border-radius:14px;transition:transform 0.3s ease;" style-hover="transform:translateX(6px);" style-before="content:'';position:absolute;top:6px;right:0;bottom:6px;width:4px;border-radius:0 8px 8px 0;background:linear-gradient(180deg,#006EE6,#41FF28);opacity:0.5;">
               <div style="width:76px;height:76px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.45);backdrop-filter:blur(14px) saturate(160%);-webkit-backdrop-filter:blur(14px) saturate(160%);border:1px solid rgba(255,255,255,0.85);box-shadow:0 8px 18px -6px rgba(0,50,90,0.14), inset 0 1px 0 rgba(255,255,255,0.9);border-radius:14px;">
                 <img src="{{ v.icon }}" alt="" style="width:56px;height:56px;object-fit:contain;animation:floatYsm 4s ease-in-out infinite;" />
               </div>
@@ -268,11 +257,11 @@
   <section style="position:relative;padding:clamp(60px,8vw,100px) 25px;overflow:hidden;">
     <img src="uploads/comp_photo_9663.jpg" alt="" style="position:absolute;top:-20px;left:-20px;width:calc(100% + 40px);height:calc(100% + 40px);object-fit:cover;filter:blur(20px) saturate(115%);transform:scale(1.02);z-index:0;" />
     <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(3,22,50,0.88) 0%,rgba(3,48,30,0.84) 100%);z-index:1;"></div>
-    <div class="r-hero2" style="max-width:1240px;margin:0 auto;position:relative;z-index:2;display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:center;">
+    <div class="r-hero2" style="max-width:1240px;margin:0 auto;position:relative;z-index:2;display:grid;grid-template-columns:1.2fr 1fr;gap:var(--bb-gutter);align-items:center;">
       <div style="order:{{ manifestoTextOrder }};text-align:left;">
-        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 28px;">Nosso Manifesto</p>
+        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 var(--bb-title-mb);">Nosso Manifesto</p>
         <div class="idx-quote-mark" style="font-size:4.5rem;font-weight:800;line-height:0.5;color:rgba(255,255,255,0.3);margin:0 0 -4px;">"</div>
-        <blockquote style="font-size:clamp(1.3rem,2.6vw,1.75rem);font-weight:400;line-height:1.7;color:rgba(255,255,255,0.88);margin:0 0 28px;">
+        <blockquote style="font-size:clamp(1.3rem,2.6vw,1.75rem);font-weight:400;line-height:1.7;color:rgba(255,255,255,0.88);margin:0 0 var(--bb-title-mb);">
           Somos um <strong style="font-weight:700;color:#FFFFFF;">Instituto de Ciência e Tecnologia</strong> que une ideias disruptivas a ações. Somos apaixonados por criatividade, inovação e tecnologia — ajudamos os negócios a <strong style="font-weight:700;color:#FFFFFF;">evoluírem digitalmente.</strong>
         </blockquote>
         <p style="font-size:0.85rem;font-weight:600;color:rgba(255,255,255,0.7);letter-spacing:0.05em;margin:0 0 36px;text-transform:uppercase;">— Brain Inovação</p>
@@ -293,8 +282,8 @@
   </div>
 
   <!-- ============ QUEM SOMOS ============ -->
-  <section class="idx-section-fix" style="padding:64px 25px;background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);overflow:hidden;">
-    <div class="r-hero2" style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+  <section class="idx-section-fix" style="padding:var(--bb-section) var(--bb-margin);background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);overflow:hidden;">
+    <div class="r-hero2" style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:var(--bb-gutter);align-items:center;">
       <div style="position:relative;">
         <div style="position:relative;border-radius:20px;overflow:hidden;">
         <img src="uploads/comp_photo_1150.jpg" alt="Brainers colaborando em frente ao quadro de inovação" class="mobile-hide-img" style="width:100%;height:400px;object-fit:cover;display:block;position:relative;z-index:1;" />
@@ -306,11 +295,11 @@
       </div>
       <div>
         <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:6px 14px;background:#006EE6;border-radius:6px;margin:0 0 16px;">Quem somos</p>
-        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 20px;color:#0A1628;">Mentes conectadas, inquietas</h2>
-        <p style="font-size:1.05rem;line-height:1.85;color:#3A4A6B;margin:0 0 32px;">
+        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 16px;color:#0A1628;">Mentes conectadas, inquietas</h2>
+        <p style="font-size:1.05rem;line-height:1.85;color:#3A4A6B;margin:0 0 48px;">
           Somos Brainers. Trabalhamos em squads multidisciplinares que unem tecnologia, negócios e design para transformar ideias em ações concretas.
         </p>
-        <div class="r-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+        <div class="r-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--bb-gutter);">
           <sc-for list="{{ stats }}" as="s" hint-placeholder-count="3">
             <div style="text-align:center;padding:22px 12px;background:rgba(255,255,255,0.65);backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);border:1px solid rgba(255,255,255,0.9);box-shadow:0 10px 24px -8px rgba(0,50,90,0.12), inset 0 1px 0 rgba(255,255,255,0.95);border-radius:14px;">
               <div style="font-size:1.9rem;font-weight:800;color:#006EE6;line-height:1.2;margin-bottom:2px;">{{ s.value }}</div>
@@ -329,7 +318,7 @@
   </div>
 
   <!-- ============ FORMULÁRIO FALE CONOSCO ============ -->
-  <section id="contato" class="idx-section-fix" style="position:relative;padding:64px 25px;background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);">
+  <section id="contato" class="idx-section-fix" style="position:relative;padding:var(--bb-section) var(--bb-margin);background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);">
     <div style="max-width:1240px;margin:0 auto;">
       <div style="text-align:center;max-width:680px;margin:0 auto 48px;">
         <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:6px 14px;background:#006EE6;border-radius:6px;margin:0 0 16px;">Fale Conosco</p>
@@ -337,7 +326,7 @@
         <p style="font-size:1.05rem;color:#3A4A6B;margin:0;">Preencha o formulário e nossa equipe entrará em contato em até 24 horas.</p>
       </div>
       <form style="position:relative;max-width:720px;margin:0 auto;{{ cardWrapBase }}padding:clamp(20px,4vw,44px);border-radius:20px;">
-        <div class="r-form2" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;">
+        <div class="r-form2" style="display:grid;grid-template-columns:1fr 1fr;gap:var(--bb-gutter);margin-bottom:16px;">
           <div>
             <label style="display:block;font-size:0.85rem;font-weight:600;color:#0A1628;margin-bottom:8px;">Nome completo</label>
             <input type="text" placeholder="Seu nome" style="width:100%;padding:14px 18px;border:1px solid rgba(0,0,0,0.1);border-radius:10px;font-size:0.95rem;font-family:inherit;color:#0A1628;background:#F5F7FA;">
@@ -347,7 +336,7 @@
             <input type="email" placeholder="seu@email.com" style="width:100%;padding:14px 18px;border:1px solid rgba(0,0,0,0.1);border-radius:10px;font-size:0.95rem;font-family:inherit;color:#0A1628;background:#F5F7FA;">
           </div>
         </div>
-        <div style="margin-bottom:20px;">
+        <div style="margin-bottom:16px;">
           <label style="display:block;font-size:0.85rem;font-weight:600;color:#0A1628;margin-bottom:8px;">Qual é o seu maior desafio de inovação?</label>
           <textarea rows="4" placeholder="Descreva brevemente o desafio que sua empresa enfrenta..." style="width:100%;padding:14px 18px;border:1px solid rgba(0,0,0,0.1);border-radius:10px;font-size:0.95rem;font-family:inherit;color:#0A1628;background:#F5F7FA;resize:vertical;"></textarea>
         </div>
@@ -363,14 +352,14 @@
   <script>const btn=document.getElementById('btnTop');window.addEventListener('scroll',()=>{btn.classList.toggle('visible',window.scrollY>400);});</script>
 
   <!-- ============ FOOTER ============ -->
-  <footer class="idx-section-fix" style="position:relative;padding:64px 25px 32px;background:#FFFFFF;border-top:1px solid rgba(0,0,0,0.06);overflow:hidden;">
+  <footer class="idx-section-fix" style="position:relative;padding:var(--bb-section) var(--bb-margin) 32px;background:#FFFFFF;border-top:1px solid rgba(0,0,0,0.06);overflow:hidden;">
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
-      <div class="r-footer" style="display:grid;grid-template-columns:1.3fr 1fr 1fr auto;gap:40px;margin-bottom:44px;align-items:start;">
+      <div class="r-footer" style="display:grid;grid-template-columns:1.3fr 1fr 1fr auto;gap:var(--bb-gutter);margin-bottom:var(--bb-gutter);align-items:start;">
         <div>
           <img src="assets/brain-logo-fullcolor.png" alt="Brain" style="height:32px;width:auto;margin-bottom:16px;" />
           <p style="font-size:0.85rem;color:#6B7A9A;line-height:1.7;margin:0;max-width:260px;">Instituto de Ciência e Tecnologia. Inovando com propósito desde a fundação pela Algar Telecom.</p>
         </div>
-        <div style="display:flex;flex-direction:column;gap:11px;">
+        <div style="display:flex;flex-direction:column;gap:var(--bb-inner-gap);">
           <a href="https://inovacaobrain.com.br/intraempreendedorismo/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#006EE6;">Intraempreendedorismo</a>
           <a href="https://inovacaobrain.com.br/inovacao-para-crescimento/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#006EE6;">Inovação para crescimento</a>
           <a href="https://inovacaobrain.com.br/open-innovation/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#006EE6;">Open Innovation</a>
@@ -378,7 +367,7 @@
           <a href="https://inovacaobrain.com.br/politica-de-cookies/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#0A1628;">Política de Cookies</a>
           <a href="https://inovacaobrain.com.br/politica-de-privacidade/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#0A1628;">Política de Privacidade</a>
         </div>
-        <div style="display:flex;flex-direction:column;gap:11px;">
+        <div style="display:flex;flex-direction:column;gap:var(--bb-inner-gap);">
           <a href="https://inovacaobrain.com.br/brain/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#0A1628;">Brain</a>
           <a href="https://inovacaobrain.com.br/consulting/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#0A1628;">Consulting</a>
           <a href="https://inovacaobrain.com.br/training/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#0A1628;">Training</a>
@@ -386,7 +375,7 @@
           <a href="carreiras.html" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#006EE6;text-decoration:underline;">Carreiras</a>
           <a href="blog.html" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#0A1628;">Blog</a>
         </div>
-        <div style="display:flex;gap:10px;">
+        <div style="display:flex;gap:var(--bb-inner-gap);">
           <a href="https://www.linkedin.com/company/inovacaobrain/" target="_blank" rel="noopener" aria-label="LinkedIn" style="width:34px;height:34px;border-radius:50%;background:#006EE6;color:#FFFFFF;display:flex;align-items:center;justify-content:center;">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.94 6 2.5 6S0 4.88 0 3.5 1.04 1 2.48 1s2.5 1.12 2.5 2.5zM.24 8.25h4.48V23H.24V8.25zM8.25 8.25h4.29v2.01h.06c.6-1.13 2.07-2.32 4.26-2.32 4.55 0 5.39 3 5.39 6.9V23h-4.48v-6.98c0-1.67-.03-3.81-2.32-3.81-2.33 0-2.68 1.82-2.68 3.69V23H8.25V8.25z"/></svg>
           </a>

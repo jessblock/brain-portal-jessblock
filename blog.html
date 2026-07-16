@@ -12,6 +12,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Exo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
+    /* ===== TOKENS DE ESPACAMENTO (Brandbook Brain - Grid 25px) ===== */
+    :root {
+      --bb-margin: 25px;
+      --bb-gutter: 25px;
+      --bb-section: 64px;
+      --bb-title-mb: 48px;
+      --bb-card-pad: 40px;
+      --bb-badge-mb: 16px;
+      --bb-inner-gap: 25px;
+    }
     * { box-sizing: border-box; }
     body { margin: 0; font-family: 'Exo', 'Segoe UI', sans-serif; background: #FFFFFF; }
     a { color: inherit; text-decoration: none; }
@@ -25,16 +35,17 @@
       .r-footer { grid-template-columns: 1fr 1fr !important; }
     }
     @media (max-width:700px) {
-      .r-header-inner { flex-wrap: wrap; gap: 12px; padding: 14px 16px !important; }
-      .r-nav { flex-wrap: wrap; gap: 6px; width: 100%; justify-content: flex-start; }
-      .r-nav a { padding: 8px 14px !important; font-size: 13px !important; }
+      .r-header-inner { flex-wrap: wrap; gap: var(--bb-gutter); padding: 16px var(--bb-margin) !important; }
+      .r-nav { flex-wrap: wrap; gap: 8px; width: 100%; justify-content: flex-start; }
+      .r-nav a:not([style-hover]) { padding: 8px 12px !important; font-size: 13px !important; }
+      .r-nav a[style-hover] { padding: 10px 18px !important; font-size: 13px !important; margin-left: 0 !important; margin-top: 6px; }
       .r-grid3, .r-grid4, .r-grid5, .r-form2 { grid-template-columns: 1fr !important; }
       .r-footer { grid-template-columns: 1fr !important; }
       .r-blogfeatured > a { grid-column: span 1 !important; grid-row: span 1 !important; }
       .mobile-stack { display: flex !important; flex-direction: column !important; }
       .mobile-hide-img { display: none !important; }
       .mobile-center { text-align: center !important; }
-      .mobile-gap-sm { gap: 16px !important; }
+      .mobile-gap-sm { gap: var(--bb-gutter) !important; }
     }
     @media (max-width:560px) {
       section { padding-left: 16px !important; padding-right: 16px !important; }
@@ -44,49 +55,26 @@
       h1 { font-size: 1.8rem !important; }
       h2 { font-size: 1.5rem !important; }
     }
-    /* ===== blog.html: correcoes especificas ===== */
+    /* ===== blog.html: correcoes especificas (tokens brandbook) ===== */
     @media (max-width:700px) {
-      .blog-section-fix {
-        padding-top: 36px !important;
-        padding-bottom: 36px !important;
-      }
-      .blog-divider {
-        display: none !important;
-      }
+      .blog-section-fix { padding-top: 48px !important; padding-bottom: 48px !important; }
+      .blog-divider { display: none !important; }
     }
     @media (max-width:480px) {
-      .blog-section-fix {
-        padding-top: 24px !important;
-        padding-bottom: 24px !important;
-      }
+      .blog-section-fix { padding-top: 36px !important; padding-bottom: 36px !important; }
     }
     /* ===== Voltar ao topo ===== */
     .btn-top {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
+      position: fixed; bottom: var(--bb-margin); right: var(--bb-margin);
+      width: 48px; height: 48px; border-radius: 50%;
       background: linear-gradient(135deg, #006EE6 0%, #41FF28 100%);
-      color: #FFFFFF;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      opacity: 0;
-      visibility: hidden;
+      color: #FFFFFF; display: flex; align-items: center; justify-content: center;
+      z-index: 9999; opacity: 0; visibility: hidden;
       transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease;
-      box-shadow: 0 6px 20px -4px rgba(0,110,230,0.35);
-      cursor: pointer;
+      box-shadow: 0 6px 20px -4px rgba(0,110,230,0.35); cursor: pointer;
     }
-    .btn-top.visible {
-      opacity: 1;
-      visibility: visible;
-    }
-    .btn-top:hover {
-      transform: translateY(-2px);
-    }
+    .btn-top.visible { opacity: 1; visibility: visible; }
+    .btn-top:hover { transform: translateY(-2px); }
   </style>
 </helmet>
 
@@ -94,7 +82,7 @@
 
   <!-- ============ HEADER ============ -->
   <header style="position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.06);">
-    <div class="r-header-inner" style="max-width:1240px;margin:0 auto;padding:16px 25px;display:flex;justify-content:space-between;align-items:center;">
+    <div class="r-header-inner" style="max-width:1240px;margin:0 auto;padding:16px var(--bb-margin);display:flex;justify-content:space-between;align-items:center;">
       <a href="index.html"><img src="assets/brain-logo-fullcolor.png" alt="Brain" style="height:32px;width:auto;" /></a>
       <nav class="r-nav" style="display:flex;align-items:center;gap:4px;">
         <a href="index.html" style="padding:10px 18px;border-radius:100px;font-size:14px;font-weight:500;color:#3A4A6B;">Home</a>
@@ -109,14 +97,14 @@
   <!-- ============ HERO ============ -->
   <section style="position:relative;padding:clamp(60px,8vw,96px) 25px clamp(40px,5vw,70px);overflow:hidden;background:radial-gradient(circle at 15% 20%, rgba(0,110,230,0.06) 0%, transparent 45%), radial-gradient(circle at 85% 80%, rgba(65,255,40,0.05) 0%, transparent 45%);">
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
-      <span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:7px 16px;background:#006EE6;border-radius:6px;margin-bottom:24px;">#brainblog</span>
-      <h1 style="font-size:clamp(2.2rem,4.2vw,3.4rem);font-weight:800;line-height:1.14;letter-spacing:-0.02em;margin:0 0 16px;color:#0A1628;max-width:760px;">
+      <span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:7px 16px;background:#006EE6;border-radius:6px;margin-bottom:var(--bb-badge-mb);">#brainblog</span>
+      <h1 style="font-size:clamp(2.2rem,4.2vw,3.4rem);font-weight:800;line-height:1.14;letter-spacing:-0.02em;margin:0 0 var(--bb-gutter);color:#0A1628;max-width:760px;">
         Artigos e conteúdo sobre <span style="display:inline-block;background:#41FF28;color:#0A1628;padding:2px 10px;border-radius:4px;">inovação</span> que fazem sentido para o seu negócio.
       </h1>
-      <p style="font-size:1.1rem;line-height:1.8;color:#3A4A6B;max-width:640px;margin:0 0 32px;">
+      <p style="font-size:1.1rem;line-height:1.8;color:#3A4A6B;max-width:640px;margin:0 0 var(--bb-title-mb);">
         Tecnologia, cultura, estratégia e cases reais, traduzidos em leitura direta para quem decide.
       </p>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <div style="display:flex;gap:var(--bb-gutter);flex-wrap:wrap;">
         <sc-for list="{{ categories }}" as="cat" hint-placeholder-count="8">
           <a href="{{ cat.url }}" target="_blank" rel="noopener" style="display:inline-block;font-size:12px;font-weight:700;letter-spacing:0.03em;color:{{ cat.color }};padding:7px 14px;background:{{ cat.bg }};border-radius:6px;">{{ cat.name }}</a>
         </sc-for>
@@ -131,13 +119,13 @@
   </div>
 
   <!-- ============ GRID DE POSTS ============ -->
-  <section class="blog-section-fix" style="position:relative;padding:64px 25px;background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);overflow:hidden;">
+  <section class="blog-section-fix" style="position:relative;padding:var(--bb-section) var(--bb-margin);background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);overflow:hidden;">
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
       <div style="text-align:center;max-width:640px;margin:0 auto 50px;">
-        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:6px 14px;background:#006EE6;border-radius:6px;margin:0 0 16px;">Posts recentes</p>
+        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:6px 14px;background:#006EE6;border-radius:6px;margin:0 0 var(--bb-gutter);">Posts recentes</p>
         <h2 style="font-size:clamp(1.7rem,2.8vw,2.3rem);font-weight:700;margin:0;color:#0A1628;">O que estamos publicando</h2>
       </div>
-      <div class="r-grid3 r-blogfeatured" style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;">
+      <div class="r-grid3 r-blogfeatured" style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--bb-gutter);">
         <a href="https://inovacaobrain.com.br/blog/copa-do-mundo-2026-a-inovacao-que-vai-alem-da-tecnologia/" target="_blank" rel="noopener" style="grid-column:span 2;grid-row:span 2;display:block;{{ glassCard }}border-radius:16px;overflow:hidden;transition:transform 0.3s ease, box-shadow 0.3s ease;position:relative;" style-hover="{{ glassCardHover }}">
           <div style="position:absolute;top:14px;left:14px;background:#0A1628;color:#FFFFFF;font-size:11px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;padding:6px 12px;border-radius:5px;z-index:2;">Destaque</div>
           <img src="uploads/comp_Blog_01_Copa2026.jpg" alt="Copa do Mundo 2026: a inovação que vai além da tecnologia" style="width:100%;height:100%;object-fit:cover;display:block;" />
@@ -161,13 +149,13 @@
   </div>
 
   <!-- ============ MAIS LIDOS ============ -->
-  <section class="blog-section-fix" style="padding:64px 25px;background:#FFFFFF;">
+  <section class="blog-section-fix" style="padding:var(--bb-section) var(--bb-margin);background:#FFFFFF;">
     <div style="max-width:1240px;margin:0 auto;">
       <div style="text-align:center;max-width:640px;margin:0 auto 50px;">
-        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 16px;">Mais lidos</p>
+        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 var(--bb-gutter);">Mais lidos</p>
         <h2 style="font-size:clamp(1.7rem,2.8vw,2.3rem);font-weight:700;margin:0;color:#0A1628;">Clássicos que continuam relevantes</h2>
       </div>
-      <div class="r-grid4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
+      <div class="r-grid4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--bb-gutter);">
         <sc-for list="{{ topReads }}" as="tr" hint-placeholder-count="4">
           <a href="{{ tr.url }}" target="_blank" rel="noopener" style="display:block;{{ glassCard }}border-radius:14px;overflow:hidden;transition:transform 0.3s ease, box-shadow 0.3s ease;" style-hover="{{ glassCardHover }}">
             <img src="{{ tr.image }}" alt="{{ tr.title }}" style="width:100%;height:auto;display:block;" />
@@ -184,11 +172,11 @@
   </div>
 
   <!-- ============ NEWSLETTER ============ -->
-  <section id="contato" class="blog-section-fix" style="position:relative;padding:64px 25px;background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);text-align:center;overflow:hidden;">
+  <section id="contato" class="blog-section-fix" style="position:relative;padding:var(--bb-section) var(--bb-margin);background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);text-align:center;overflow:hidden;">
     <div style="max-width:640px;margin:0 auto;position:relative;z-index:2;">
-      <h2 style="font-size:clamp(1.8rem,3.2vw,2.4rem);font-weight:700;margin:0 0 16px;color:#0A1628;">Receba conteúdos sobre inovação direto no seu e-mail</h2>
-      <p style="font-size:1.05rem;color:#3A4A6B;margin:0 0 32px;">Sem spam. Só artigos que ajudam você a decidir melhor.</p>
-      <form style="display:flex;gap:12px;max-width:460px;margin:0 auto;flex-wrap:wrap;justify-content:center;">
+      <h2 style="font-size:clamp(1.8rem,3.2vw,2.4rem);font-weight:700;margin:0 0 var(--bb-gutter);color:#0A1628;">Receba conteúdos sobre inovação direto no seu e-mail</h2>
+      <p style="font-size:1.05rem;color:#3A4A6B;margin:0 0 var(--bb-title-mb);">Sem spam. Só artigos que ajudam você a decidir melhor.</p>
+      <form style="display:flex;gap:var(--bb-inner-gap);max-width:460px;margin:0 auto;flex-wrap:wrap;justify-content:center;">
         <input type="email" placeholder="seu@email.com" style="flex:1;min-width:220px;padding:14px 18px;border:1px solid rgba(0,0,0,0.1);border-radius:8px;font-size:0.95rem;font-family:inherit;color:#0A1628;background:#FFFFFF;" />
         <button type="submit" style="padding:14px 28px;border:none;border-radius:8px;font-weight:700;font-size:14px;background:linear-gradient(135deg,#006EE6 0%,#41FF28 100%);background-size:160% 100%;background-position:0% 0%;color:#FFFFFF;cursor:pointer;transition:background-position 0.4s ease, transform 0.15s ease;" style-hover="background-position:100% 0%;" style-active="transform:scale(0.98);">Inscrever-se</button>
       </form>
@@ -202,14 +190,14 @@
   <script>const btn=document.getElementById('btnTop');window.addEventListener('scroll',()=>{btn.classList.toggle('visible',window.scrollY>400);});</script>
 
   <!-- ============ FOOTER ============ -->
-  <footer class="blog-section-fix" style="position:relative;padding:64px 25px 32px;background:#FFFFFF;border-top:1px solid rgba(0,0,0,0.06);overflow:hidden;">
+  <footer class="blog-section-fix" style="position:relative;padding:var(--bb-section) var(--bb-margin) 32px;background:#FFFFFF;border-top:1px solid rgba(0,0,0,0.06);overflow:hidden;">
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
-      <div class="r-footer" style="display:grid;grid-template-columns:1.3fr 1fr 1fr auto;gap:40px;margin-bottom:44px;align-items:start;">
+      <div class="r-footer" style="display:grid;grid-template-columns:1.3fr 1fr 1fr auto;gap:40px;margin-bottom:var(--bb-gutter);align-items:start;">
         <div>
           <img src="assets/brain-logo-fullcolor.png" alt="Brain" style="height:32px;width:auto;margin-bottom:16px;" />
           <p style="font-size:0.85rem;color:#6B7A9A;line-height:1.7;margin:0;max-width:260px;">Instituto de Ciência e Tecnologia. Inovando com propósito desde a fundação pela Algar Telecom.</p>
         </div>
-        <div style="display:flex;flex-direction:column;gap:11px;">
+        <div style="display:flex;flex-direction:column;gap:var(--bb-inner-gap);">
           <a href="https://inovacaobrain.com.br/intraempreendedorismo/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#006EE6;">Intraempreendedorismo</a>
           <a href="https://inovacaobrain.com.br/inovacao-para-crescimento/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#006EE6;">Inovação para crescimento</a>
           <a href="https://inovacaobrain.com.br/open-innovation/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#006EE6;">Open Innovation</a>
@@ -217,7 +205,7 @@
           <a href="https://inovacaobrain.com.br/politica-de-cookies/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#0A1628;">Política de Cookies</a>
           <a href="https://inovacaobrain.com.br/politica-de-privacidade/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#0A1628;">Política de Privacidade</a>
         </div>
-        <div style="display:flex;flex-direction:column;gap:11px;">
+        <div style="display:flex;flex-direction:column;gap:var(--bb-inner-gap);">
           <a href="https://inovacaobrain.com.br/brain/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#0A1628;">Brain</a>
           <a href="https://inovacaobrain.com.br/consulting/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#0A1628;">Consulting</a>
           <a href="https://inovacaobrain.com.br/training/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#0A1628;">Training</a>
@@ -225,7 +213,7 @@
           <a href="carreiras.html" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#006EE6;text-decoration:underline;">Carreiras</a>
           <a href="blog.html" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#0A1628;">Blog</a>
         </div>
-        <div style="display:flex;gap:10px;">
+        <div style="display:flex;gap:var(--bb-gutter);">
           <a href="https://www.linkedin.com/company/inovacaobrain/" target="_blank" rel="noopener" aria-label="LinkedIn" style="width:34px;height:34px;border-radius:50%;background:#006EE6;color:#FFFFFF;display:flex;align-items:center;justify-content:center;">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.94 6 2.5 6S0 4.88 0 3.5 1.04 1 2.48 1s2.5 1.12 2.5 2.5zM.24 8.25h4.48V23H.24V8.25zM8.25 8.25h4.29v2.01h.06c.6-1.13 2.07-2.32 4.26-2.32 4.55 0 5.39 3 5.39 6.9V23h-4.48v-6.98c0-1.67-.03-3.81-2.32-3.81-2.33 0-2.68 1.82-2.68 3.69V23H8.25V8.25z"/></svg>
           </a>

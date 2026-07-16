@@ -20,6 +20,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Exo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
+    /* ===== TOKENS DE ESPACAMENTO (Brandbook Brain - Grid 25px) ===== */
+    :root {
+      --bb-margin: 25px;
+      --bb-gutter: 25px;
+      --bb-section: 64px;
+      --bb-title-mb: 48px;
+      --bb-card-pad: 40px;
+      --bb-badge-mb: 16px;
+      --bb-inner-gap: 25px;
+    }
     * { box-sizing: border-box; }
     body { margin: 0; font-family: 'Exo', 'Segoe UI', sans-serif; background: #FFFFFF; }
     a { color: inherit; text-decoration: none; }
@@ -37,16 +47,17 @@
       .r-footer { grid-template-columns: 1fr 1fr !important; }
     }
     @media (max-width:700px) {
-      .r-header-inner { flex-wrap: wrap; gap: 12px; padding: 14px 16px !important; }
-      .r-nav { flex-wrap: wrap; gap: 6px; width: 100%; justify-content: flex-start; }
-      .r-nav a { padding: 8px 14px !important; font-size: 13px !important; }
+      .r-header-inner { flex-wrap: wrap; gap: var(--bb-gutter); padding: 16px var(--bb-margin) !important; }
+      .r-nav { flex-wrap: wrap; gap: 8px; width: 100%; justify-content: flex-start; }
+      .r-nav a:not([style-hover]) { padding: 8px 12px !important; font-size: 13px !important; }
+      .r-nav a[style-hover] { padding: 10px 18px !important; font-size: 13px !important; margin-left: 0 !important; margin-top: 6px; }
       .r-grid3, .r-grid4, .r-grid5, .r-form2 { grid-template-columns: 1fr !important; }
       .r-footer { grid-template-columns: 1fr !important; }
       .r-blogfeatured > a { grid-column: span 1 !important; grid-row: span 1 !important; }
       .mobile-stack { display: flex !important; flex-direction: column !important; }
       .mobile-hide-img { display: none !important; }
       .mobile-center { text-align: center !important; }
-      .mobile-gap-sm { gap: 16px !important; }
+      .mobile-gap-sm { gap: var(--bb-gutter) !important; }
     }
     @media (max-width:560px) {
       section { padding-left: 16px !important; padding-right: 16px !important; }
@@ -56,56 +67,29 @@
       h1 { font-size: 1.8rem !important; }
       h2 { font-size: 1.5rem !important; }
     }
-    /* ===== carreiras.html: correcoes especificas ===== */
+    /* ===== carreiras.html: correcoes especificas (tokens brandbook) ===== */
     @media (max-width:700px) {
-      .car-section-fix {
-        padding-top: 36px !important;
-        padding-bottom: 36px !important;
-      }
-      .car-timeline-container {
-        padding: 24px 16px 32px !important;
-      }
+      .car-section-fix { padding-top: 48px !important; padding-bottom: 48px !important; }
+      .car-timeline-container { padding: 24px 16px 32px !important; }
       .car-culture-icon { width: 100px !important; height: 100px !important; }
-      .car-divider {
-        display: none !important;
-      }
+      .car-divider { display: none !important; }
     }
     @media (max-width:480px) {
-      .car-section-fix {
-        padding-top: 24px !important;
-        padding-bottom: 24px !important;
-      }
-      .car-timeline-container {
-        padding: 20px 12px 28px !important;
-      }
+      .car-section-fix { padding-top: 36px !important; padding-bottom: 36px !important; }
+      .car-timeline-container { padding: 20px 12px 28px !important; }
     }
     /* ===== Voltar ao topo ===== */
     .btn-top {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
+      position: fixed; bottom: var(--bb-margin); right: var(--bb-margin);
+      width: 48px; height: 48px; border-radius: 50%;
       background: linear-gradient(135deg, #006EE6 0%, #41FF28 100%);
-      color: #FFFFFF;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      opacity: 0;
-      visibility: hidden;
+      color: #FFFFFF; display: flex; align-items: center; justify-content: center;
+      z-index: 9999; opacity: 0; visibility: hidden;
       transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease;
-      box-shadow: 0 6px 20px -4px rgba(0,110,230,0.35);
-      cursor: pointer;
+      box-shadow: 0 6px 20px -4px rgba(0,110,230,0.35); cursor: pointer;
     }
-    .btn-top.visible {
-      opacity: 1;
-      visibility: visible;
-    }
-    .btn-top:hover {
-      transform: translateY(-2px);
-    }
+    .btn-top.visible { opacity: 1; visibility: visible; }
+    .btn-top:hover { transform: translateY(-2px); }
   </style>
 </helmet>
 
@@ -122,7 +106,7 @@
 
   <!-- ============ HEADER ============ -->
   <header style="position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.06);">
-    <div class="r-header-inner" style="max-width:1240px;margin:0 auto;padding:16px 25px;display:flex;justify-content:space-between;align-items:center;">
+    <div class="r-header-inner" style="max-width:1240px;margin:0 auto;padding:16px var(--bb-margin);display:flex;justify-content:space-between;align-items:center;">
       <a href="index.html"><img src="assets/brain-logo-fullcolor.png" alt="Brain" style="height:32px;width:auto;" /></a>
       <nav class="r-nav" style="display:flex;align-items:center;gap:4px;">
         <a href="index.html" style="padding:10px 18px;border-radius:100px;font-size:14px;font-weight:500;color:#3A4A6B;">Home</a>
@@ -138,14 +122,14 @@
   <section style="position:relative;padding:clamp(60px,8vw,100px) 25px clamp(50px,6vw,80px);overflow:hidden;background:radial-gradient(circle at 15% 20%, rgba(0,110,230,0.06) 0%, transparent 45%), radial-gradient(circle at 85% 80%, rgba(65,255,40,0.05) 0%, transparent 45%);">
 
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
-      <div class="r-hero2" style="display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center;">
+      <div class="r-hero2" style="display:grid;grid-template-columns:1.1fr 1fr;gap:var(--bb-gutter);align-items:center;">
         <div>
-          <span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:7px 16px;background:#006EE6;border-radius:6px;margin-bottom:24px;">#VemSerBrainer</span>
-          <h1 style="font-size:clamp(2.4rem,4.6vw,3.8rem);font-weight:800;line-height:1.12;letter-spacing:-0.02em;margin:0 0 20px;color:#0A1628;">Construa o <span style="display:inline-block;background:#41FF28;color:#0A1628;padding:2px 10px;border-radius:4px;">futuro</span></h1>
-          <p style="font-size:1.1rem;line-height:1.8;color:#3A4A6B;max-width:520px;margin:0 0 36px;">
+          <span style="display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:7px 16px;background:#006EE6;border-radius:6px;margin-bottom:var(--bb-badge-mb);">#VemSerBrainer</span>
+          <h1 style="font-size:clamp(2.4rem,4.6vw,3.8rem);font-weight:800;line-height:1.12;letter-spacing:-0.02em;margin:0 0 var(--bb-gutter);color:#0A1628;">Construa o <span style="display:inline-block;background:#41FF28;color:#0A1628;padding:2px 10px;border-radius:4px;">futuro</span></h1>
+          <p style="font-size:1.1rem;line-height:1.8;color:#3A4A6B;max-width:520px;margin:0 0 var(--bb-title-mb);">
             Somos Brainers. Mentes conectadas, inquietas. Problemas reais nos movem. No Brain, a curiosidade é valorizada, a colaboração interdisciplinar é a regra e a inovação acontece todos os dias.
           </p>
-          <div style="display:flex;gap:16px;flex-wrap:wrap;">
+          <div style="display:flex;gap:var(--bb-gutter);flex-wrap:wrap;">
             <a href="https://inovacaobrain.com.br/carreiras/" target="_blank" rel="noopener" style="display:inline-block;padding:15px 32px;border-radius:8px;font-weight:700;font-size:14px;background:linear-gradient(135deg,#006EE6 0%,#41FF28 100%);background-size:160% 100%;background-position:0% 0%;color:#FFFFFF;transition:background-position 0.4s ease, transform 0.2s ease;" style-hover="background-position:100% 0%;transform:translateY(-2px);">Veja nossas vagas</a>
             <a href="#beneficios" style="display:inline-block;padding:15px 32px;border-radius:8px;font-weight:700;font-size:14px;border:2px solid rgba(0,0,0,0.12);color:#0A1628;transition:border-color 0.25s ease, transform 0.2s ease, color 0.25s ease;" style-hover="border-color:#006EE6;color:#006EE6;transform:translateY(-2px);">Conheça nossos benefícios</a>
           </div>
@@ -165,22 +149,22 @@
   </div>
 
   <!-- ============ CULTURA ============ -->
-  <section class="car-section-fix" style="position:relative;padding:64px 25px;overflow:hidden;">
+  <section class="car-section-fix" style="position:relative;padding:var(--bb-section) var(--bb-margin);overflow:hidden;">
     <img src="uploads/comp_photo_9658.jpg" alt="" style="position:absolute;top:-20px;left:-20px;width:calc(100% + 40px);height:calc(100% + 40px);object-fit:cover;filter:blur(20px) saturate(115%);transform:scale(1.02);z-index:0;">
     <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(3,22,50,0.87) 0%,rgba(3,48,30,0.83) 100%);z-index:1;"></div>
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
       <div style="text-align:center;max-width:680px;margin:0 auto 56px;">
-        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 16px;">Por que o Brain</p>
-        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 12px;color:#FFFFFF;">Cultura que transforma</h2>
+        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 var(--bb-gutter);">Por que o Brain</p>
+        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 20px;color:#FFFFFF;">Cultura que transforma</h2>
         <p style="font-size:1.05rem;color:rgba(255,255,255,0.82);margin:0;">Profissionais movidos por curiosidade, adaptabilidade e colaboração</p>
       </div>
-      <div class="r-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:25px;">
+      <div class="r-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--bb-gutter);">
         <sc-for list="{{ culture }}" as="c" hint-placeholder-count="3">
           <div style="position:relative;text-align:center;padding:40px 26px;{{ glassCard }}transition:transform 0.35s ease, box-shadow 0.35s ease;" style-hover="{{ glassCardHover }}" style-before="{{ glassHighlight }}">
             <div class="car-culture-icon" style="width:130px;height:130px;margin:0 auto 20px;">
               <img src="{{ c.icon }}" alt="" style="width:100%;height:100%;object-fit:contain;animation:floatY {{ c.duration }}s ease-in-out infinite, glowBreathe 4s ease-in-out infinite;" />
             </div>
-            <h4 style="font-size:1.1rem;font-weight:600;margin:0 0 10px;color:#FFFFFF;">{{ c.title }}</h4>
+            <h4 style="font-size:1.1rem;font-weight:600;margin:0 0 var(--bb-gutter);color:#FFFFFF;">{{ c.title }}</h4>
             <p style="font-size:0.92rem;color:rgba(255,255,255,0.82);line-height:1.65;margin:0;">{{ c.desc }}</p>
           </div>
         </sc-for>
@@ -195,23 +179,23 @@
   </div>
 
   <!-- ============ BENEFÍCIOS ============ -->
-  <section id="beneficios" class="car-section-fix" style="position:relative;padding:64px 25px;background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);overflow:hidden;">
+  <section id="beneficios" class="car-section-fix" style="position:relative;padding:var(--bb-section) var(--bb-margin);background:linear-gradient(135deg,#EAF4FD 0%,#E4FBEF 100%);overflow:hidden;">
     <div style="position:absolute;top:20px;right:-60px;width:280px;height:280px;border-radius:50%;background:#FFC300;opacity:0.12;filter:blur(70px);"></div>
     <div style="position:absolute;bottom:-40px;left:-60px;width:260px;height:260px;border-radius:50%;background:#006EE6;opacity:0.1;filter:blur(70px);"></div>
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
       <div style="text-align:center;max-width:680px;margin:0 auto 56px;">
-        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 16px;">Benefícios</p>
-        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 12px;color:#0A1628;">Cuidamos de quem inova</h2>
+        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 var(--bb-gutter);">Benefícios</p>
+        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 20px;color:#0A1628;">Cuidamos de quem inova</h2>
         <p style="font-size:1.05rem;color:#3A4A6B;margin:0;">Pacote completo para que você foque no que realmente importa</p>
       </div>
-      <div class="r-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <div class="r-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--bb-gutter);">
         <sc-for list="{{ benefits }}" as="b" hint-placeholder-count="9">
-          <div style="position:relative;display:flex;align-items:center;gap:16px;padding:20px;{{ glassRow }}transition:transform 0.3s ease, box-shadow 0.3s ease;" style-hover="{{ glassRowHover }}" style-before="{{ glassHighlight }}">
+          <div style="position:relative;display:flex;align-items:center;gap:var(--bb-gutter);padding:20px;{{ glassRow }}transition:transform 0.3s ease, box-shadow 0.3s ease;" style-hover="{{ glassRowHover }}" style-before="{{ glassHighlight }}">
             <div style="width:56px;height:56px;flex-shrink:0;display:flex;align-items:center;justify-content:center;{{ glassIconBox }}border-radius:12px;">
               <img src="{{ b.icon }}" alt="" style="width:40px;height:40px;object-fit:contain;animation:floatYsm {{ b.duration }}s ease-in-out infinite;" />
             </div>
             <div>
-              <h4 style="font-size:0.95rem;color:#0A1628;margin:0 0 4px;">{{ b.title }}</h4>
+              <h4 style="font-size:0.95rem;color:#0A1628;margin:0 0 8px;">{{ b.title }}</h4>
               <p style="font-size:0.82rem;color:#3A4A6B;line-height:1.5;margin:0;">{{ b.desc }}</p>
             </div>
           </div>
@@ -227,19 +211,19 @@
   </div>
 
   <!-- ============ ESCRITÓRIOS ============ -->
-  <section class="car-section-fix" style="padding:64px 25px;background:#FFFFFF;">
+  <section class="car-section-fix" style="padding:var(--bb-section) var(--bb-margin);background:#FFFFFF;">
     <div style="max-width:1240px;margin:0 auto;">
       <div style="text-align:center;max-width:680px;margin:0 auto 56px;">
-        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:6px 14px;background:#006EE6;border-radius:6px;margin:0 0 16px;">Presença</p>
-        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 12px;color:#0A1628;">Onde estamos</h2>
+        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;padding:6px 14px;background:#006EE6;border-radius:6px;margin:0 0 var(--bb-gutter);">Presença</p>
+        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 20px;color:#0A1628;">Onde estamos</h2>
         <p style="font-size:1.05rem;color:#3A4A6B;margin:0;">Três escritórios pelo Brasil, operando em Anywhere Office</p>
       </div>
-      <div class="r-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <div class="r-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--bb-gutter);">
         <sc-for list="{{ offices }}" as="o" hint-placeholder-count="3">
           <div style="position:relative;padding:36px 26px;{{ glassCard }}transition:transform 0.3s ease, box-shadow 0.3s ease;" style-hover="{{ glassCardHover }}" style-before="{{ glassHighlight }}">
             <div style="font-size:0.85rem;font-weight:700;color:#006EE6;margin-bottom:14px;">{{ o.number }}</div>
-            <h4 style="font-size:1.2rem;margin:0 0 6px;color:#0A1628;">{{ o.city }}</h4>
-            <p style="font-size:0.85rem;font-weight:600;color:#006EE6;text-transform:uppercase;letter-spacing:0.05em;margin:0 0 12px;">{{ o.state }}</p>
+            <h4 style="font-size:1.2rem;margin:0 0 8px;color:#0A1628;">{{ o.city }}</h4>
+            <p style="font-size:0.85rem;font-weight:600;color:#006EE6;text-transform:uppercase;letter-spacing:0.05em;margin:0 0 20px;">{{ o.state }}</p>
             <p style="font-size:0.9rem;color:#3A4A6B;line-height:1.6;margin:0;">{{ o.desc }}</p>
           </div>
         </sc-for>
@@ -254,18 +238,18 @@
   </div>
 
   <!-- ============ TIMELINE: JORNADA DE SELEÇÃO ============ -->
-  <section class="car-section-fix" style="position:relative;padding:64px 25px;overflow:hidden;">
+  <section class="car-section-fix" style="position:relative;padding:var(--bb-section) var(--bb-margin);overflow:hidden;">
     <img src="uploads/comp_photo_9663.jpg" alt="" style="position:absolute;top:-20px;left:-20px;width:calc(100% + 40px);height:calc(100% + 40px);object-fit:cover;filter:blur(20px) saturate(115%);transform:scale(1.02);z-index:0;">
     <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(3,22,50,0.87) 0%,rgba(3,48,30,0.83) 100%);z-index:1;"></div>
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
       <div style="text-align:center;max-width:680px;margin:0 auto 56px;">
-        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 16px;">Processo seletivo</p>
-        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 12px;color:#FFFFFF;">A jornada de seleção</h2>
+        <p style="display:inline-block;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:#0A1628;padding:6px 14px;background:#41FF28;border-radius:6px;margin:0 0 var(--bb-gutter);">Processo seletivo</p>
+        <h2 style="font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;margin:0 0 20px;color:#FFFFFF;">A jornada de seleção</h2>
         <p style="font-size:1.05rem;color:rgba(255,255,255,0.82);margin:0;">Transparente, ágil e com feedback em cada etapa</p>
       </div>
       <div class="car-timeline-container" style="position:relative;max-width:1160px;margin:0 auto;background:rgba(255,255,255,0.14);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);border:1px solid rgba(255,255,255,0.3);border-radius:24px;padding:clamp(28px,4vw,44px) clamp(16px,3vw,32px) 36px;">
         <div class="mobile-hide-img" style="position:absolute;top:96px;left:8%;right:8%;height:3px;background:linear-gradient(90deg,#006EE6,#41FF28,#FFC300,#006EE6,#41FF28);background-size:200% 100%;opacity:0.4;animation:barShift 6s linear infinite;"></div>
-        <div class="r-grid5" style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px;">
+        <div class="r-grid5" style="display:grid;grid-template-columns:repeat(5,1fr);gap:var(--bb-gutter);">
           <sc-for list="{{ timeline }}" as="t" hint-placeholder-count="5">
             <div style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;">
               <div style="position:relative;width:104px;height:104px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
@@ -291,9 +275,9 @@
   </div>
 
   <!-- ============ CTA FINAL ============ -->
-  <section class="car-section-fix" style="position:relative;padding:64px 25px;background:linear-gradient(135deg,#E8F4FD 0%,#D4FFF0 100%);text-align:center;overflow:hidden;">
-    <h2 style="font-size:clamp(1.8rem,3.6vw,2.6rem);font-weight:700;margin:0 0 16px;color:#0A1628;position:relative;z-index:2;">Venha construir o futuro com a gente</h2>
-    <p style="font-size:1.05rem;color:#3A4A6B;margin:0 0 36px;position:relative;z-index:2;">Confira as vagas abertas e dê o próximo passo na sua carreira.</p>
+  <section class="car-section-fix" style="position:relative;padding:var(--bb-section) var(--bb-margin);background:linear-gradient(135deg,#E8F4FD 0%,#D4FFF0 100%);text-align:center;overflow:hidden;">
+    <h2 style="font-size:clamp(1.8rem,3.6vw,2.6rem);font-weight:700;margin:0 0 var(--bb-gutter);color:#0A1628;position:relative;z-index:2;">Venha construir o futuro com a gente</h2>
+    <p style="font-size:1.05rem;color:#3A4A6B;margin:0 0 var(--bb-title-mb);position:relative;z-index:2;">Confira as vagas abertas e dê o próximo passo na sua carreira.</p>
     <a href="https://inovacaobrain.com.br/carreiras/" target="_blank" rel="noopener" style="display:inline-block;padding:16px 36px;border-radius:8px;font-weight:700;font-size:14px;background:linear-gradient(135deg,#006EE6 0%,#41FF28 100%);background-size:160% 100%;background-position:0% 0%;color:#FFFFFF;position:relative;z-index:2;transition:background-position 0.4s ease, transform 0.2s ease;" style-hover="background-position:100% 0%;transform:translateY(-2px);">Veja nossas vagas</a>
   </section>
 
@@ -304,14 +288,14 @@
   <script>const btn=document.getElementById('btnTop');window.addEventListener('scroll',()=>{btn.classList.toggle('visible',window.scrollY>400);});</script>
 
   <!-- ============ FOOTER ============ -->
-  <footer class="car-section-fix" style="position:relative;padding:64px 25px 32px;background:#FFFFFF;border-top:1px solid rgba(0,0,0,0.06);overflow:hidden;">
+  <footer class="car-section-fix" style="position:relative;padding:var(--bb-section) var(--bb-margin) 32px;background:#FFFFFF;border-top:1px solid rgba(0,0,0,0.06);overflow:hidden;">
     <div style="max-width:1240px;margin:0 auto;position:relative;z-index:2;">
-      <div class="r-footer" style="display:grid;grid-template-columns:1.3fr 1fr 1fr auto;gap:40px;margin-bottom:44px;align-items:start;">
+      <div class="r-footer" style="display:grid;grid-template-columns:1.3fr 1fr 1fr auto;gap:var(--bb-gutter);margin-bottom:var(--bb-gutter);align-items:start;">
         <div>
           <img src="assets/brain-logo-fullcolor.png" alt="Brain" style="height:32px;width:auto;margin-bottom:16px;" />
           <p style="font-size:0.85rem;color:#6B7A9A;line-height:1.7;margin:0;max-width:260px;">Instituto de Ciência e Tecnologia. Inovando com propósito desde a fundação pela Algar Telecom.</p>
         </div>
-        <div style="display:flex;flex-direction:column;gap:11px;">
+        <div style="display:flex;flex-direction:column;gap:var(--bb-inner-gap);">
           <a href="https://inovacaobrain.com.br/intraempreendedorismo/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#006EE6;">Intraempreendedorismo</a>
           <a href="https://inovacaobrain.com.br/inovacao-para-crescimento/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#006EE6;">Inovação para crescimento</a>
           <a href="https://inovacaobrain.com.br/open-innovation/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#006EE6;">Open Innovation</a>
@@ -319,7 +303,7 @@
           <a href="https://inovacaobrain.com.br/politica-de-cookies/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#0A1628;">Política de Cookies</a>
           <a href="https://inovacaobrain.com.br/politica-de-privacidade/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#0A1628;">Política de Privacidade</a>
         </div>
-        <div style="display:flex;flex-direction:column;gap:11px;">
+        <div style="display:flex;flex-direction:column;gap:var(--bb-inner-gap);">
           <a href="https://inovacaobrain.com.br/brain/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#0A1628;">Brain</a>
           <a href="https://inovacaobrain.com.br/consulting/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#0A1628;">Consulting</a>
           <a href="https://inovacaobrain.com.br/training/" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#0A1628;">Training</a>
@@ -327,7 +311,7 @@
           <a href="carreiras.html" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#006EE6;text-decoration:underline;">Carreiras</a>
           <a href="blog.html" style="font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:#0A1628;">Blog</a>
         </div>
-        <div style="display:flex;gap:10px;">
+        <div style="display:flex;gap:var(--bb-gutter);">
           <a href="https://www.linkedin.com/company/inovacaobrain/" target="_blank" rel="noopener" aria-label="LinkedIn" style="width:34px;height:34px;border-radius:50%;background:#006EE6;color:#FFFFFF;display:flex;align-items:center;justify-content:center;">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.94 6 2.5 6S0 4.88 0 3.5 1.04 1 2.48 1s2.5 1.12 2.5 2.5zM.24 8.25h4.48V23H.24V8.25zM8.25 8.25h4.29v2.01h.06c.6-1.13 2.07-2.32 4.26-2.32 4.55 0 5.39 3 5.39 6.9V23h-4.48v-6.98c0-1.67-.03-3.81-2.32-3.81-2.33 0-2.68 1.82-2.68 3.69V23H8.25V8.25z"/></svg>
           </a>
